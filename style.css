@@ -16,6 +16,12 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.animable{
+    transition: box-shadow .5s ease-in-out, transform .5s ease-in-out;
+    
+}
+
 /*START-> product Container*/
 .productContainer{
 
@@ -23,14 +29,18 @@ body{
     height: 450px;
     display: flex;
     opacity: 1;
-    transition: box-shadow .5s ease-in-out, transform .5s ease-in-out;
     border-radius: 10px;
-    box-shadow: #0000001a 2px 5px 10px;
-
+    box-shadow: #0000001a 2px 20px 10px;
 }
 .productContainer:hover{
     box-shadow: #00000056 15px 50px 10px;
     transform: scale(1.008,1.008);
+}
+
+.productContainer:hover .addCartButton{
+    transition-delay: .4s;
+    box-shadow: #0000005f 10px 10px 10px;
+    transform: scale(1.1,1.1);
 }
 /*END-> product Container*/
 
@@ -123,7 +133,7 @@ font-size: 14px;
 color:white;
 margin-top:30px;
 display: flex;
-transition:background-color .2s ease-in-out;
+
 }
 
 .addCartButton:hover{
