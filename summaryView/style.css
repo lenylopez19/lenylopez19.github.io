@@ -1,0 +1,287 @@
+:root{
+
+    --subColor: #CAC9FF;
+
+    --font-bold: "hankenGrotesk-bold";
+    --font-medium:"hankenGrotesk-medium";
+    --font-extraBold: "hankenGrotesk-extraBold";
+}
+
+*{
+    margin:0;
+    padding: 0;
+    border:none;
+}
+html,body{
+    box-sizing: border-box;
+}
+html{
+    font-size:62.5%;
+}
+
+body{
+    font-family: var(--font-medium);
+    
+}
+
+
+@font-face {
+    font-family: "hankenGrotesk-bold" ;
+    src: url(assets/fonts/static/HankenGrotesk-Bold.ttf);
+}
+
+@font-face {
+    font-family: "hankenGrotesk-extraBold";
+    src: url(assets/fonts/static/HankenGrotesk-ExtraBold.ttf);
+
+}
+@font-face{
+    font-family: "hankenGrotesk-medium";
+    src: url(assets/fonts/static/HankenGrotesk-Medium.ttf)
+}
+
+
+
+
+/*=================START==RESULT SECTION====================*/
+
+.resultContainer{
+    max-height: 356px;
+    background-color: purple;
+    background: linear-gradient(180deg, #7755FF 0%, #6943FF 0.01%, #2F2CE9 100%);
+    box-shadow: 0px 30px 60px rgba(61, 108, 236, 0.15);
+    border-radius: 0px 0px 32px 32px;
+    text-align: center;
+}
+
+.resultContainer .headTitle{
+    font-size: 1.8rem;
+    padding: 2.4rem 0;
+  
+    color:var(--subColor);
+}
+
+.resultContainer .scoreIcon{
+
+    height: 14rem;
+    width: 14rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #4D21C9 0%, rgba(37, 33, 201, 0) 100%, rgba(37, 33, 201, 0) 100%);
+
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+}
+
+.resultContainer .scoreIcon .result{
+    color:white;
+    font-size: 5.6rem;
+}
+
+.resultContainer .scoreIcon .subResult{
+    color:var(--subColor);
+    font-size: 1.6rem;
+    font-family: var(--font-bold);
+}
+
+.resultContainer .valoration{
+    font-size:2.4rem;
+    color:white;
+    padding: 2.4rem 0 .8rem;
+}
+
+.resultContainer .valorationDesc{
+    font-size: 1.6rem;
+    padding: 0 5.6rem 4.0rem;
+    color: var(--subColor);
+
+}
+
+/*=================END==RESULT SECTION====================*/
+
+/*summaryItem color clases*/
+.reaction{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), #FF5555;
+    color:#FF5555;
+}
+.memory{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), #FFB21E;
+    color:#FFB21E;
+}
+.verbal{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), #00BB8F;
+    color:#00BB8F;
+}
+.visual{
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), #1125D6;
+    color:#1125D6;
+}
+/**/
+
+/*=================START==SUMMARY SECTION====================*/
+
+.summaryView{
+    padding: 0 3rem;
+}
+
+.summaryView .summaryTitle{
+    font-size:1.8rem;
+    /* padding:2.4rem 3.2rem; */
+    padding:2.4rem 0;
+
+}
+
+.summaryView .summaryItem{
+    padding:1.7rem;
+    border-radius: 1.2rem;
+    display: flex;
+    align-items: center;
+    /* margin:0 3rem 1.6rem; */
+    margin:0 0 1.6rem;
+    text-transform: capitalize;
+    font-size:1.6rem;
+}
+
+
+.summaryView .summaryItem .summaryItemTitle{
+    /* font-size: 1.6rem; */
+    margin-left: 1.2rem;
+}
+.summaryView .summaryItem .summaryScore .ofScore{
+    opacity: .5;
+}
+.summaryView .summaryItem .summaryScore{
+    /* font-size:1.6rem; */
+    margin-left:auto;
+    color:#303B59;
+  
+}
+/*=================END==SUMMARY SECTION====================*/
+
+
+button{
+    width: 100%;
+    padding:1.7rem;
+    margin: .8rem 0 3rem ;
+    background: #303B59;
+    border-radius: 128px;
+    color:white;
+    font-size: 1.8rem;
+}
+
+button:hover{
+    background: linear-gradient(180deg, #7755FF 0%, #6943FF 0.01%, #2F2CE9 100%);    
+    cursor:pointer;
+}
+
+
+@media only screen and (min-width:765px){
+    
+    html{  
+        height: 100%;
+    }
+    body{
+        height: 100%;
+        background-color:#ECF2FF;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+    }
+    .appWrapper{
+        flex-basis: 737px;
+        display: flex;
+        background-color: white;
+        border-radius: 3.2rem;
+        box-shadow: 0px 30px 60px rgba(61, 108, 236, 0.15);
+    }
+
+
+    .resultContainer{
+        max-height: 100%;
+        border-radius: 3.2rem;
+        flex-grow:1;
+        max-width: 50%;
+    }
+
+
+    .summaryView{
+        flex-grow:1;
+        max-height: 100%;
+    }
+
+   
+
+
+
+
+    /*=====START===Left Result side=====*/
+    .resultContainer .headTitle{
+        font-size: 2.4rem;
+        padding:3.8rem 0 3.5rem
+    }
+    
+    .resultContainer .scoreIcon{
+        width: 20rem;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .resultContainer .scoreIcon .result{
+        font-size: 7.2rem;
+    }
+    
+    .resultContainer .scoreIcon .subResult{
+        font-size: 1.8rem;
+    }
+    
+    .resultContainer .valoration{
+       font-size: 3.2rem;
+       padding:2.8rem 0 1.4rem;
+    }
+    
+    .resultContainer .valorationDesc{
+        font-size:1.8rem
+    
+    }
+
+    /*=====END===LEFT RESULT SIDE=====*/
+
+
+
+    /*===========START== RIGHT SUMMARY SIDE======*/
+
+
+
+    .summaryView{
+        padding: 0 4rem 4.6rem;
+    }
+    
+    .summaryView .summaryTitle{
+        font-size:2.4rem;
+        padding:3.8rem 0 2.8rem;
+    
+    }
+    
+    .summaryView .summaryItem{
+       font-size: 1.8rem;
+
+    }
+    
+
+    button{
+      
+        margin: 2.5rem 0 0 ;
+      
+    }
+
+
+    /*===========END== RIGHT SUMMARY SIDE======*/
+
+
+}
