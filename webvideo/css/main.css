@@ -1,0 +1,1411 @@
+*{
+	margin:0;padding:0;text-decoration: none;
+	font-family: Segoe UI;
+	color:#CACACA;
+	color:white;
+	 -webkit-appearance: none;
+    border-radius: 0;
+    transition: all 0.5s;
+}
+
+html{
+	touch-action: manipulation;
+}
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.clear
+{
+  clear:both;
+}
+
+.slick-list{
+  overflow: hidden;
+}
+.slick-list:after{
+  clear: both;
+  content: "";
+  display: block;
+}
+/*temporal*/
+#mainmasterdiv{
+	/*display:none;*/
+	}
+#mastersearchdiv{
+	display:none;
+	opacity: 0;
+}
+#mastertvshowdiv{
+	display: none;
+}
+
+.a20px{
+	height: 20px;
+}
+.spacer{
+	height: 15px;
+}
+
+/*end temporal*/
+/*effects*/
+
+/*end effects*/
+
+@font-face {
+font-family: 'Segoe UI';
+font-style: normal;
+font-weight: normal;
+src: local('Segoe UI'), url('../fonts/segoeui.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Segoe UI bold';
+src: url('../fonts/segoe-ui-bold.woff') format('woff');
+}
+
+html,body{
+	height: 100%;
+	width: 100%;
+	
+	
+}	
+
+body{
+	background-image: url(../icon/Groupedited.png);
+	background-color:#4F4F4F;
+	/*background-image: url(../icon/groupedited.png);*/
+	background-size: 200% 200%;
+	/*background-color:#424242;*/
+	/*background-color:#424242;*/
+}
+.allmargin{
+	width:95%;
+	
+	margin:0 auto;
+}
+
+/*header menu start*/
+#headermenu{
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	top:0;
+	transition:all 0.3s;
+	/*background: rgba(33, 33, 33, 0.80);*/
+	/*background: #5C5C5C;*/
+	/*background: rgba(15,15,15,1);
+background: -moz-linear-gradient(top, rgba(15,15,15,1) 0%, rgba(38,38,38,0) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(15,15,15,1)), color-stop(100%, rgba(38,38,38,0)));
+background: -webkit-linear-gradient(top, rgba(15,15,15,1) 0%, rgba(38,38,38,0) 100%);
+background: -o-linear-gradient(top, rgba(15,15,15,1) 0%, rgba(38,38,38,0) 100%);
+background: -ms-linear-gradient(top, rgba(15,15,15,1) 0%, rgba(38,38,38,0) 100%);
+background: linear-gradient(to bottom, rgba(15,15,15,1) 0%, rgba(38,38,38,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f0f0f', endColorstr='#262626', GradientType=0 );
+*/
+}
+ #headermenu #contentheadermenu{
+ 
+	height: 35px;
+
+ }
+
+  #headermenu #contentheadermenu > div{
+ 
+  	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+	border-radius: 2px;
+	height: 100%;
+
+ }
+
+ #headermenu #contentheadermenu #lft{
+ 	width: 45px;
+ 	background: #5C5C5C;
+ 	float:left;
+ 	position: relative;
+ }
+
+ #headermenu #contentheadermenu #lft #sttngs{
+ 	background: url(../icon/settings.svg);
+	background-repeat: no-repeat;
+ 	height: 22px;
+ 	width: 22px;
+ 	position:absolute;
+ 	left:0;
+ 	right:0; 
+ 	top:7px;
+ 	margin:0 auto;
+ }
+
+
+
+
+ #headermenu #contentheadermenu #rght{
+ 	width: 45px;
+ 	background: #5C5C5C;
+ 	float:right;
+ }
+ #headermenu #contentheadermenu #rght #srsttngs{
+ 	height: 25px;
+ 	width: 25px;
+ 	border-radius: 25px;
+ 	font-size: 12px;
+ 	line-height: 25px;
+ 	text-align: center;
+ 	background-color:#DBA55F;
+ 	color:white;
+ 	text-transform: uppercase;
+ 	margin:0 auto;
+ 	margin-top:5px;
+ }
+#headermenu #contentheadermenu #rght .usernametext{
+		display: none;
+	}
+#headermenu #contentheadermenu #lft .sttngstext{
+		display: none;
+	}
+#headermenu #contentheadermenu #cntr .srchbox{
+		display: none;
+		border:none;
+		background: transparent;
+		margin-left: 34px;
+    	font-size: 15px;
+    	width: 80%;
+	}
+
+ #headermenu #contentheadermenu #cntr{
+ 	width: 180px;
+ 	background: #5C5C5C;
+	margin:0 auto;
+	position: relative;
+	overflow: hidden;
+	
+ }
+
+ #headermenu #contentheadermenu #cntr #srch{
+ 	background: url(../icon/search.svg);
+	background-repeat: no-repeat;
+ 	height: 22px;
+ 	width: 22px;
+ 	position:absolute;
+ 	left:0;
+ 	right:0; 
+ 	top:7px;
+ 	margin:0 auto;
+
+ }
+
+
+
+/*end header menu*/
+
+/*news content start*/
+#newcontent{
+	width: 100%;
+	height: 245px;
+	
+	margin-top:4px;
+	white-space: nowrap;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	
+}
+
+#newcontent #newcontentitem{
+	height: 203px;
+	width: 315px;
+	margin-top:10px;
+	margin-left:8px;
+	display: inline-block;
+	
+
+
+
+}
+
+.catcontent .firstitem{
+	margin-left: 30px!important;
+}
+#newcontent #newcontentitem #littleimg{
+	height: 185px;
+	width: 100%;
+	background: purple;
+	border-bottom:3px solid #C99300;
+	border-top-right-radius: 2px;
+	border-top-right-radius: 2px;
+	position: relative;
+	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.36);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.36);
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.36);
+}
+#newcontent #newcontentitem #littleimg > img{
+	width: 100%;
+	height: 100%;
+}
+#newcontent #newcontentitem #littleimg .imgfooter{
+	height: 40px;
+	width: inherit;
+	position: absolute;
+	top:0;
+	
+	text-align: left;
+
+
+	
+}
+.blackcontainer{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	bottom:0;
+	display:none;
+	z-index: 10;
+
+}
+
+.clickable{
+	cursor:pointer;
+}
+#newcontent #newcontentitem #littleimg .imgfooter > span{
+
+	font-size:18px;
+	background: #c99300;
+	border-radius: 5px;
+	padding:5px;
+	margin-top: 5px;
+	margin-left: 7px;
+	display: inline-block;
+
+}
+
+
+
+#newcontent #newcontentitem #itemtitle{
+	height: 26px;
+	width: 100%;
+	line-height: 26px;
+	font-size:17px;
+}
+/*newcontent end*/
+
+
+/*titles*/
+
+.firsttitle{
+	margin-top: 20px!important;
+}
+
+.contenttitle{
+	height: 27px;
+	margin-top:20px;
+}
+.contenttitle .newcontenttitleicon{
+	height: inherit;
+	width: 27px;
+	border-radius: 26px;
+	float:left;
+
+	
+}
+.contenttitle #newsicon{
+	background: #56BD67;
+	text-align: center;
+	line-height: 27px;
+	font-family: Segoe UI bold;
+	font-size: 20px;
+}
+.contenttitle #hoticon{
+	background: url(../icon/hoticon.svg);
+}
+.contenttitle #dramaicon{
+	background: url(../icon/drama.svg);
+}
+.contenttitle #newcontenttitletext{
+	float:left;
+	height: inherit;
+	line-height:26px;
+	text-indent:5px;
+	font-size:18px;
+}
+
+.contenttitle .showmore{
+	float:right;
+	height:inherit;
+	width: 75px;
+	text-align: center;
+	line-height: 27px; 
+	background: #96834E;
+	border-radius: 2px;
+	font-size: 14px;
+
+	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.26);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.26);
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.26);
+}
+/*titles end*/
+
+
+/*category bar start*/
+
+.catselector{
+	max-width: 500px; 
+	
+	border-radius: 2px;
+	height: auto;
+	margin-top: 5px;
+	opacity: 0;
+	display:none;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	margin-top:-10px;
+	z-index: 11;
+}
+
+
+.catselector .catitemselector{
+	height: 50px;
+	border-bottom: 1px solid gray;
+	line-height: 50px;
+	text-indent: 10px;
+	
+	background-color:rgba(97, 97, 97,1);
+	border-radius: 1px;
+}
+
+
+#catbar{
+	margin-top: 10px;
+	max-width: 500px;
+	height: 35px;
+	background-color:rgba(97, 97, 97,1);
+	border-radius: 2px;
+	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.36);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.36);
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.36);
+
+}
+#catbar #catlogo{
+	width: 40px;
+	height: inherit;
+	float:left;
+}
+#catbar #catlogo #catlogoicon{
+	width: 20px;
+	height: 24px;
+
+	background: url(../icon/tv.svg);
+	margin-left: 8px;
+	margin-top:5px;
+}
+#catbar #catname{
+	width: 200px;
+	height: inherit;
+	float:left;
+	line-height: 35px;
+	font-size: 18px;
+}
+#catbar #arrowicon{
+	width: 40px;
+	height: inherit;
+	float: right;
+}
+#catbar #arrowicon #arrowiconcontainer{
+	width: 15px;
+	height: 15px;
+	float: right;
+	background: url(../icon/arrow.svg);
+	background-repeat: no-repeat;
+	margin-top:12px;
+	margin-right: 12px;
+}
+/*category bar en*/
+
+
+/*categori content*/
+.catcontent{
+	height: 210px;
+	width: 100%;
+	margin-top: 15px;
+	white-space: nowrap;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.catitem{
+	height: 182px;
+	width: 120px;
+	display:inline-block;
+	margin-left: 8px;
+}
+.catitemimg{
+	height: 165px;
+	width: 100%;
+	background: purple;
+	border-bottom:3px solid #C99300;
+	-webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.36);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.36);
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.36);
+}
+.catitemimg > img{
+	width: 100%;
+	height: 100%;
+}
+.catitemname{
+	height: 16px;
+	width: 100%;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+/*SHOW CATEGORY DIV*/
+#showcategorydiv{
+ display:none;
+ opacity: 0;
+}
+#showcategorydiv .icon_holder{
+	height: 60px;
+	width: 60px;
+	
+	border-radius: 60px;
+	background: url(../icon/hoticon.svg);
+}
+#showcategorydiv .category_title{
+	display: block;
+	text-align: center;
+	font-size: 2em;
+}
+/* END SHOW CATEGORY DIV*/
+
+/*Mastersearch style*/
+#mastersearchdiv{
+
+}
+
+#mastersearchdiv .searchstatus{
+	font-size: 30px;
+    margin-top: 25px;
+}
+#mastersearchdiv .first_cat_title{
+	/*margin-top:30px!important;*/
+}
+#mastersearchdiv .search_cat_title{
+	height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 21px;
+    text-indent: 10px;
+    background: #847056;
+ 	border-radius: 2px;
+}
+
+#mastersearchdiv .search_movieshow_item{
+	margin-left:5px!important;
+}
+
+
+.search_centered_container{
+	
+    text-align: center;
+}
+
+#showcategorydiv .search_centered_container{
+	margin-top:15px;
+    text-align: center;
+}
+
+
+#mastersearchdiv .search_actor_item{
+	height: 125px;
+	width: 80px;
+	display:inline-block;
+	margin-left:10px;
+
+}
+#mastersearchdiv .actorimg{
+	width: 80px;
+	height: 80px;
+	border-radius: 80px;
+	background: purple;
+}
+#mastersearchdiv .actorname{
+	font-size:14px;
+	text-align: center;
+	width: 80px;
+}
+/*end mastersearch style*/
+
+
+
+/*master tv show style*/
+
+#mastertvshowdiv{
+	
+}
+
+#mastertvshowdiv .backbluredbanner{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom:2px solid #ffba00;
+	height: 247px;
+	width: 100%;
+	overflow: hidden;
+
+}
+
+#mastertvshowdiv .backbluredbanner > img{
+	width: 100%;
+	/*height: 100%;*/
+	filter:blur(3px);
+}
+
+.bigitem{
+	height: 200px;
+	width: 150px;
+    margin:0 auto;
+    margin-top:10px;
+    position: relative;
+    z-index: 5;
+}
+.bigitemimg > img{
+	width: 100%;
+	height: 100%;
+}
+
+.bigitemimg{
+    width: 100%;
+    background: purple;
+    border-bottom: 3px solid #C99300;
+	height: 100%;
+}
+
+.bigitemname{
+	text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    text-transform: capitalize;
+    position: relative;
+}
+
+
+#mastertvshowdiv .infoholder{
+	width: 330px;
+	height:200px;
+ 
+	margin:0 auto;
+}
+#mastertvshowdiv .infoholder > div{
+	margin-left:5px;
+	margin-bottom:5px;
+	background:#F8C32D;
+	border-radius: 2px;
+	position: relative;
+}
+
+
+#mastertvshowdiv .infoholder .yearholder{
+	width: 23%;
+	height:32px;
+	font-size:18px;
+	text-align: center;
+	line-height: 32px;
+	font-family: 'Segoe UI bold';
+	float: left;
+
+}
+#mastertvshowdiv .infoholder .rating{
+	width: 45%;
+	height:32px;
+	line-height: 43px;
+	font-size: 47px;
+	text-align: center;
+	float: left;
+}
+.blankrate{
+
+}
+#mastertvshowdiv .infoholder .language{
+	width: 26.5%;
+	height:32px;
+	font-family: 'Segoe UI bold';
+	text-align: center;
+	line-height: 32px;
+	font-size:14px;
+	float: left;
+}
+#mastertvshowdiv .infoholder .seasons{
+	width: 23%;
+	height:68px;
+	font-size:30px;
+	text-align: center;
+	line-height: 55px;
+	font-family: 'Segoe UI bold';
+	float: left;
+}
+.footerinfo{
+	position:absolute;
+	bottom:2px;
+	height:12px;
+	font-size:12px;
+	line-height: 5px!important;
+	text-transform:capitalize;
+	width: 100%;
+	text-align:center;
+	font-family: 'Segoe UI bold';
+}
+#mastertvshowdiv .infoholder .chapters{
+	width: 22%;
+	height:68px;
+	
+	text-align: center;
+	font-size:30px;
+	text-align: center;
+	line-height: 55px;
+	font-family: 'Segoe UI bold';
+	float: left;
+}
+#mastertvshowdiv .infoholder .duration{
+	width: 21.5%;
+	height:68px;
+	
+	text-align: center;
+	font-size:30px;
+	text-align: center;
+	line-height: 55px;
+	font-family: 'Segoe UI bold';
+
+	float: left;
+}
+
+#mastertvshowdiv .infoholder .pgrate{
+	width: 26.5%;
+	height:68px;
+	
+	text-align: center;
+	font-size:30px;
+	text-align: center;
+	line-height: 55px;
+	font-family: 'Segoe UI bold';
+	float: left;
+}
+
+#mastertvshowdiv .infoholder .sipnosis{
+	width: 97.5%;
+	height:90px;
+	 
+	text-align: justify;
+	overflow: hidden;
+	position: relative;
+	float: left;
+}
+#mastertvshowdiv .infoholder .sipnosis .sipnosiscontent{
+	
+	display: block;
+	width: 93%;
+	line-height: 15px;
+	margin-top:10px;
+	margin:0 auto;
+	margin-top: 5px;
+	font-size:14px;
+}
+
+#mastertvshowdiv .infoholder .sipnosis .moredetail{
+	background: rgba(248,195,45,0);
+background: -moz-linear-gradient(top, rgba(248,195,45,0) 0%, rgba(248,195,45,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,195,45,0)), color-stop(100%, rgba(248,195,45,1)));
+background: -webkit-linear-gradient(top, rgba(248,195,45,0) 0%, rgba(248,195,45,1) 100%);
+background: -o-linear-gradient(top, rgba(248,195,45,0) 0%, rgba(248,195,45,1) 100%);
+background: -ms-linear-gradient(top, rgba(248,195,45,0) 0%, rgba(248,195,45,1) 100%);
+background: linear-gradient(to bottom, rgba(248,195,45,0) 0%, rgba(248,195,45,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8c32d', endColorstr='#f8c32d', GradientType=0 );
+height: 80px;
+width: 100%;
+position: absolute;
+bottom:0;
+}
+
+#mastertvshowdiv .infoholder .sipnosis .moredetail .showmorebutton{
+	width: 70px;
+	height: 30px;
+	float:right;
+	font-size:12px;
+	background: white;
+	border-radius: 3px;
+	margin-top:45px;
+	margin-right: 10px;
+	color:gray;
+	text-align: center;
+	line-height: 30px;
+}
+
+
+
+#mastertvshowdiv .seasonholder{
+	margin-top:15px;
+	max-width: 450px;
+	position: relative;
+	margin:0 auto;
+	margin-top:10px;
+}
+
+/*dropdown menu start*/
+#mastertvshowdiv .seasonholder .seasonoptcontent{
+	background: #585858;
+	position: absolute;
+    width: 100%;
+    margin-top:-10px;
+    display: none;
+    opacity: 0;
+    z-index: 11;
+}
+#mastertvshowdiv .seasonholder .seasonoptcontent .seasonopt{
+	height: 45px;
+    line-height: 45px;
+    text-indent: 10px;
+    font-size: 1.1em;
+    border-bottom: 1px solid gray;
+}
+/*dropdown menu end*/
+
+#mastertvshowdiv .seasonholder .seasonname{
+	font-size:20px;
+	/*font-family: segoe ui bold;*/
+	line-height: 40px;
+	margin-left:15px;
+	display: inline-block;
+	
+}
+
+.catbartitle{
+	font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.episodedetail{
+	height: auto;
+	padding-bottom:12px;
+	width: 360px;
+	background:#717171;
+	z-index: 50;
+	position: fixed;
+	border-radius: 8px;
+	-webkit-box-shadow: 0px 6px 22px 0px rgba(0,0,0,0.65);
+	-moz-box-shadow: 0px 6px 22px 0px rgba(0,0,0,0.65);
+	box-shadow: 0px 6px 22px 0px rgba(0,0,0,0.65);
+	display: none;
+	opacity: 0;
+	left:0;
+	right: 0;
+	margin:0 auto;
+}
+
+.episodedetail .bannerholder{
+	height: 202px;
+	width: 100%;
+	border-bottom:2px solid #ffba00;
+}
+.episodedetail .bannerholder > img{
+	width: 100%;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.episodedetail .bannerholder > video{
+	width: 100%;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+.episodedetail .title{
+	font-weight: bolder;
+	padding-top: 10px;
+	padding-left: 10px;
+
+	font-size: 22px;
+	color:white;
+}
+.episodedetail .sipnosis{
+	padding-top: 5px;
+	padding-left:10px;
+	font-size: 18px;
+	color:white;
+	padding-bottom:20px;
+}
+
+.episodedetail .closebtn{
+	height: 45px;
+    width: 120px;
+    background: #d8d8d8;
+    float: right;
+    border-radius: 8px;
+    margin-right: 10px;
+    margin-top: 20px;
+
+}
+
+.episodedetail .closebtn .closetxt{
+	float: left;
+    margin-top: 9px;
+    /* margin-left: 11px; */
+    /* border: 1px solid red; */
+    width: 75px;
+    color: #404040;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right;
+
+}
+
+.episodedetail .closebtn .closeicon{
+	margin-top: 12px;
+    margin-right: 8px;
+    float: right;
+    border-radius: 25px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    line-height: 22px;
+    background: #974141;
+}
+
+
+#mastertvshowdiv .chapteritem{
+	margin-top:5px;
+	width: 98%;
+	height: 105px;
+	background: rgba(0,0,100,0.16);
+	background: #6B6B6B;
+	overflow: hidden;
+	padding-right: 7px;
+}
+
+#mastertvshowdiv .chapteritem .thumbnail{
+	
+	max-width: 164px;
+	height: 100%;
+	background: black;
+	float: left;
+	margin-right: 5px;
+	
+}
+#mastertvshowdiv .chapteritem .thumbnail > img{
+	
+	width: 100%;
+	background: darkgray;
+	height: 100%;
+}
+
+#mastertvshowdiv .chapteritem .chapterinfo{
+	
+
+	
+}
+#mastertvshowdiv .chapteritem .chapterinfo .chaptertitle{
+	font-size: 14px;
+	display: block;
+	color:white;
+	
+}
+#mastertvshowdiv .chapteritem .chapterinfo .chapterdesc{
+	font-size: 11px;
+	display: block;
+	text-align: justify;
+	color:lightgray;	
+
+	
+}
+
+
+
+#mastertvshowdiv .seasonholder .seasonselector{
+	background:#616161;
+	height: 40px;
+	-webkit-box-shadow: 0px 5px 26px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 5px 26px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 26px 0px rgba(0,0,0,0.75);
+	margin-bottom:10px;
+	margin-top:20px;
+}
+
+#mastertvshowdiv .seasonholder .seasonselector .dropicon{
+
+	height: 100%;
+	width:40px;
+	float: right;
+	margin-right: 5px;
+	text-align: center;
+	line-height: 37px;
+	font-size:22px; 
+
+}
+
+#mastertvshowdiv .comentholder{
+	margin:0 auto;
+	margin-top:20px;
+	position: relative;
+	
+}
+#mastertvshowdiv .comentholder .comentbar{
+	height: 40px;
+	background: #E2E2E2;
+	border-radius: 2px;
+	width: 100%;
+	margin-bottom:10px;
+}
+#mastertvshowdiv .comentholder .comentbar .comentleftside{
+	float:left;
+	width: 90%;
+	height: 100%;
+	font-size: 20px;
+	line-height: 40px;
+	color:#95989A;
+	text-indent: 15px;
+	border: none;
+    background: transparent;
+}
+
+
+#mastertvshowdiv .comentholder .comentitem{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-bottom:10px;
+}
+
+#mastertvshowdiv .comentholder .comentitem .userdata{
+	width: 100%;
+	height: 30px;
+}
+#mastertvshowdiv .comentholder .comentitem .userdata .usericon{
+	width: 30px;
+	border:1px solid blue;
+	height: 30px;
+	float: left;
+}
+#mastertvshowdiv .comentholder .comentitem .userdata .username{
+	display: inline-block;
+	text-indent: 10px;
+	font-size: 20px;
+	color:lightgray;
+}
+
+#mastertvshowdiv .comentholder .comentitem .comentdata{
+	font-size: 14px;
+	color:gray;
+	padding:10px;
+	width: 80%;
+	float: right;
+	margin-top:8px;
+	border-radius: 4px;
+	/*background: #878787;
+	color:lightgray;*/
+	background: lightgray;
+	color:gray;
+}
+
+/* end master tv show style*/
+
+
+/*master search div*/
+	
+	
+#headermasterdiv{
+		position: relative;
+		z-index: 10;
+		height: 60px;
+	}
+
+#headermasterdiv .contextmenu{
+		width: 200px;
+		height: 100px;
+		position: fixed;
+		top:40px;
+		z-index: 1;
+		background: #5C5C5C;
+		opacity: 0;
+		display: none;
+		border-radius: 2px;
+
+	}
+
+#headermasterdiv .usercontextmenu{
+		width: 160px;
+		height: auto;
+		position: fixed;
+		top:40px;
+		z-index: 1;
+		background: #5C5C5C;
+		opacity: 0;
+		display: none;
+		border-radius: 2px;
+		/*padding-top:5px;
+		padding-bottom:5px;*/
+
+}
+
+#headermasterdiv .usercontextmenu .optiontitle{
+		font-size: 19px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-right: 10px;
+		text-align: right;
+	}
+
+.hlopt{
+	background: #b71d11;
+}
+
+.sizeselected{
+	border: 2px solid #F8C32D!important;
+}
+
+#headermasterdiv .contextmenu .optiontitle{
+		font-size: 19px;
+		padding-top: 5px;
+		padding-left: 10px;
+	}
+
+
+#headermasterdiv .contextmenu .sizecontrolholder{
+		
+		height: 40px;
+		width:185px;
+		margin:0 auto;
+		margin-top:15px;
+	}
+#headermasterdiv .contextmenu .sizecontrolholder .leftcon{
+		height: 35px;
+		width: 35px;
+		border-radius: 35px;
+		float:left;
+		background: #858585;
+		box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+		text-align: center;
+		line-height: 30px;
+		font-size: 20px;
+	}
+#headermasterdiv .contextmenu .sizecontrolholder .sizecontainer{
+	
+		height: 20px;
+		width: 110px;
+		float:left;
+		margin-top:16px;
+		position: relative;
+	}
+
+#headermasterdiv .contextmenu .sizecontrolholder .sizecontainer .sizeitem{
+	
+		position: absolute;
+		bottom:2px;
+		background: #6C6C6C;
+		border-radius: 2px;
+		border:2px solid #6C6C6C;
+	}
+
+#headermasterdiv .contextmenu .sizecontrolholder .sizecontainer #s1{
+		height: 15px;
+		width: 10px;
+		left:10px;
+		
+
+	}
+#headermasterdiv .contextmenu .sizecontrolholder .sizecontainer #s2{
+		height: 20px;
+		width: 15px;
+		left:27px;
+		
+
+	}
+
+#headermasterdiv .contextmenu .sizecontrolholder .sizecontainer #s3{
+		height: 28px;
+		width: 17px;
+		left:50px;
+		
+	}
+
+#headermasterdiv .contextmenu .sizecontrolholder .sizecontainer #s4{
+		height: 36px;
+		width: 25px;
+		left:75px;
+		
+	}
+
+#headermasterdiv .contextmenu .sizecontrolholder .rightcon{
+
+		height: 35px;
+		width: 35px;
+		border-radius: 35px;
+		float:left;
+		background: #858585;
+		box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
+		text-align: center;
+		line-height: 30px;
+		font-size:20px;
+	}
+
+
+/* end master search div*/
+
+
+
+/*ipad portrait layout*/
+@media only screen and (min-width:760px){
+	body{
+		background-image: url(../icon/groupedited.png);
+	}
+	#mainmasterdiv{
+		padding-top: 10px;
+
+	}
+	#mastertvshowdiv{
+		
+		margin-top:20px;
+	}
+	#headermenu{
+		height: 70px;
+
+	}
+	.bigitem{
+		height: 350px;
+		width: 240px;
+	}
+	.bigitemname{
+		font-size:40px;
+	}
+	#contentheadermenu{
+		height: 45px!important;
+	}
+	#headermenu #contentheadermenu #cntr{
+		width: 300px;
+	}
+	#headermenu #contentheadermenu #cntr #srch{
+		left:15px;
+		top:12px;
+		right: auto;
+		margin:auto;
+	}
+
+	#headermenu #contentheadermenu #cntr #srch .srchbox{
+		margin-left: 37px;
+		width: 220px;
+		height: 30px;
+		margin-top:-5px;
+		border:none;
+		background: transparent;
+		font-size:16px;
+		display: inline;
+	}
+
+	#headermenu #contentheadermenu #rght{
+		width: 120px;
+		
+
+	}
+	#headermenu #contentheadermenu #rght #srsttngs{
+		margin-top:11px;
+		float:right;
+		margin-right: 14px;
+		color:white;
+	}
+
+	
+	#headermenu #contentheadermenu #rght .usernametext{
+		margin-top: 12px;
+    	float: right;
+    	margin-right: 10px;
+    	color:white;
+    	display: block;
+	}
+	
+	
+
+	#headermenu #contentheadermenu #lft .sttngstext{
+		height: 45px;
+		line-height: 43px;
+    	margin-left: 48px;
+    	display: inline;
+	}
+	
+
+	#headermenu #contentheadermenu #lft{
+		width: 120px;
+
+	}
+	#headermenu #contentheadermenu #lft #sttngs{
+		top:11px;
+		left:14px;
+		right: auto;
+	}
+
+	#mastertvshowdiv .infoholder{
+		width:530px;
+		height: 260px;
+	}
+	#mastertvshowdiv .infoholder .yearholder{
+		height: 62px;
+		line-height: 62px;
+		font-size:35px;
+
+	}
+	#mastertvshowdiv .infoholder .rating{
+		height: 62px;
+		line-height: 62px;
+	}
+	#mastertvshowdiv .infoholder .rating{
+		height: 62px;
+		width: 47%;
+		line-height: 62px;
+	}
+	#mastertvshowdiv .infoholder .language{
+		height: 62px;
+		line-height: 62px;
+		font-size:22px;
+	}
+	#mastertvshowdiv .infoholder .seasons{
+		height: 87px;
+		line-height: 70px;
+		font-size:40px;
+	}
+	#mastertvshowdiv .infoholder .chapters{
+		height: 87px;
+		width: 23%;
+		line-height: 70px;
+		font-size:40px;
+	}
+	#mastertvshowdiv .infoholder .duration{
+		height: 87px;
+		width: 23%;
+		line-height: 70px;
+		font-size:40px;
+	}
+	#mastertvshowdiv .infoholder .pgrate{
+		height: 87px;
+		line-height: 70px;
+		font-size:40px;
+	}
+	#mastertvshowdiv .infoholder .sipnosis{
+		height: 100px;
+		width: 98%;
+		
+	}
+	#mastertvshowdiv .infoholder .sipnosis .sipnosiscontent{
+		font-size:20px;
+		line-height: 20px;
+	}
+	.footerinfo{
+		font-size:18px;
+		line-height: 0px!important;
+	}
+	#mastertvshowdiv .seasonholder{
+		max-width: 670px;
+	}
+	#mastertvshowdiv .seasonholder .seasonselector{
+		height: 50px;
+	}
+	#mastertvshowdiv .seasonholder .seasonname{
+		line-height: 50px;
+	}
+	#mastertvshowdiv .seasonholder .seasonselector .dropicon{
+		line-height: 43px;
+		font-size:35px;
+	}
+	#mastertvshowdiv .chapteritem{
+		height: 140px;
+	}
+	#mastertvshowdiv .chapteritem .thumbnail{
+		max-width: 210px;
+	}
+	#mastertvshowdiv .chapteritem .chapterinfo .chaptertitle{
+		font-size:22px;
+	}
+	#mastertvshowdiv .chapteritem .chapterinfo .chapterdesc{
+		font-size:18px;
+	}
+	#mastertvshowdiv .comentholder{
+		width:670px;	
+	}
+	#mastertvshowdiv .backbluredbanner{
+		height: 400px;
+		
+	}
+
+}
+/*end ipad portrait layout*/
+
+
+
+/*ipad landscape and more*/
+
+
+@media only screen and (min-width:900px){
+	
+	.allmargin{
+		width: 99%;
+		margin:0 auto;
+	}
+	
+	.bigitem{
+		width:290px;
+		height: 412px;
+		float:left;
+	}
+	.contenttitle{
+		margin-top:20px!important;
+	}
+	#mastertvshowdiv .infoholder{
+		width: 571px;
+		height: 365px;
+		float:right;
+	}
+	.bigitemname{
+		text-indent:20px;
+		margin-bottom: 5px;
+		float:left;
+		padding:0;
+	}
+	#mastertvshowdiv{
+		width: 880px;
+	}
+	#mastertvshowdiv .comentholder{
+		width: 290px;
+		float:left;
+		margin:auto;
+	}
+
+	#mastertvshowdiv .seasonholder{
+		max-width: 565px;
+		float: right;
+		margin-top: 0;
+	}
+	#mastertvshowdiv .comentholder .comentbar{
+		margin:auto;
+		margin-top: 20px;
+		margin-bottom:10px;
+		height: 50px;
+	}
+	#mastertvshowdiv .comentholder .comentbar .comentleftside{
+		line-height: 50px;
+	}
+	#mastertvshowdiv .backbluredbanner{
+		height: 435px;
+		
+	}
+	#mastertvshowdiv .backbluredbanner > img{
+		filter:blur(10px);
+
+	}
+
+}
+
+
+
+/* end ipad landscape and more*/
