@@ -1,5 +1,6 @@
 const API = "https://dog.ceo/api";
 const listAllDogs = "breeds/list/all";
+let globalDogs = [];
 
 function getRamdonDog(dogArr, maxDogs) {
   let newDogArr = [];
@@ -25,32 +26,45 @@ const getDogs = async (numberOfDogs) => {
 
   if (result?.ok) {
     const dataJson = await result.json();
-    const dogs = Object.entries(dataJson.message);
-    const dogsToDisplay = getRamdonDog(dogs, numberOfDogs);
+    globalDogs = Object.entries(dataJson.message);
+    const dogsToDisplay = getRamdonDog(globalDogs, numberOfDogs);
 
     for (const dog of dogsToDisplay) {
       const dogName = dog[0];
-      try {
-        result = await fetch(`${API}/breed/${dogName}/images/random`);
-      } catch (err) {
-        console.error("something went wrong fetching a dog image", err);
-      }
-      if (result?.ok) {
-        const dataJson = await result.json();
-        const dogImageUrl = dataJson.message;
-        renderDogs(dog, dogImageUrl, 3);
-      } else {
-        console.log(result?.status);
-      }
+      const dogBreeds = dog[1];
+      const dogObj = {
+        name: dogName,
+        breed: dogBreeds,
+      };
+      getDogsImg(dogObj, renderDogs);
     }
   } else {
     console.log(`HTTP Response Code: ${result?.status}`);
   }
 };
 
-function renderDogs(dog, dogImageUrl, breedLimit) {
-  const breeds = dog[1];
-  const dogName = dog[0];
+const getDogsImg = async (dogObj, fn) => {
+  let result;
+  try {
+    result = await fetch(`${API}/breed/${dogObj.name}/images/random`);
+  } catch (err) {
+    console.error("error fetching img", err);
+  }
+
+  if (result?.ok) {
+    const dataJson = await result.json();
+    const dogImageUrl = dataJson.message;
+    dogObj.imageUrl = dogImageUrl;
+    fn(dogObj, 3);
+    // return dogImageUrl;
+  } else console.log(result?.status);
+};
+
+function renderDogs(dogObj, breedLimit) {
+  const breeds = dogObj.breed;
+  const dogName = dogObj.name;
+  const dogImageUrl = dogObj.imageUrl;
+
   let breedList = "";
 
   const breedExist = breeds.length;
@@ -80,7 +94,33 @@ function renderDogs(dog, dogImageUrl, breedLimit) {
 
   setTimeout(() => {
     document.getElementById(`dog_${dogName}`).style.opacity = 1;
-  }, 1000);
+  }, 300);
 }
 
-getDogs(8);
+function search(char) {
+  const result = [...globalDogs].filter((dog) => dog[0].includes(char));
+
+  if (result.length) {
+    for (const dog of result) {
+      const dogName = dog[0];
+      const dogBreeds = dog[1];
+      const newDog = {
+        name: dogName,
+        breed: dogBreeds,
+      };
+      getDogsImg(newDog, renderDogs);
+    }
+  }
+}
+
+const searchInput = document.getElementById("searchDog");
+searchInput.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    if (this.value) {
+      document.getElementById("contentHolder").innerHTML = "";
+      search(this.value);
+    }
+  }
+});
+
+getDogs(12);
