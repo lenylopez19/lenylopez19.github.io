@@ -98,8 +98,8 @@ function renderDogs(dogObj, breedLimit) {
 }
 
 function search(char) {
+  char = char.toLowerCase();
   const result = [...globalDogs].filter((dog) => dog[0].includes(char));
-
   if (result.length) {
     for (const dog of result) {
       const dogName = dog[0];
