@@ -16,6 +16,7 @@ function getRamdonDog(dogArr, maxDogs) {
 }
 
 const getDogs = async (numberOfDogs) => {
+  showLoading();
   let result;
 
   try {
@@ -30,8 +31,7 @@ const getDogs = async (numberOfDogs) => {
     const dogsToDisplay = getRamdonDog(globalDogs, numberOfDogs);
 
     for (const dog of dogsToDisplay) {
-      const dogName = dog[0];
-      const dogBreeds = dog[1];
+      const [dogName, dogBreeds] = dog;
       const dogObj = {
         name: dogName,
         breed: dogBreeds,
@@ -45,12 +45,10 @@ const getDogs = async (numberOfDogs) => {
 
 const getDogsImg = async (dogObj, fn) => {
   let result;
-  showLoading();
   try {
     result = await fetch(`${API}/breed/${dogObj.name}/images/random`);
   } catch (err) {
     console.error("error fetching img", err);
-    hideLoading();
   }
 
   if (result?.ok) {
@@ -58,20 +56,14 @@ const getDogsImg = async (dogObj, fn) => {
     const dogImageUrl = dataJson.message;
     dogObj.imageUrl = dogImageUrl;
     fn(dogObj, 3);
-    // return dogImageUrl;
   } else {
     console.log(result?.status);
-    hideLoading();
   }
 };
 
 function renderDogs(dogObj, breedLimit) {
-  const breeds = dogObj.breed;
-  const dogName = dogObj.name;
-  const dogImageUrl = dogObj.imageUrl;
-
+  const { name: dogName, breed: breeds, imageUrl: dogImageUrl } = dogObj;
   let breedList = "";
-
   const breedExist = breeds.length;
 
   if (breedExist) {
@@ -99,7 +91,7 @@ function renderDogs(dogObj, breedLimit) {
 
   setTimeout(() => {
     document.getElementById(`dog_${dogName}`).style.opacity = 1;
-  }, 300);
+  }, 200);
 }
 
 function search(char) {
