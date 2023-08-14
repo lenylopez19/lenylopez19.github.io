@@ -45,10 +45,12 @@ const getDogs = async (numberOfDogs) => {
 
 const getDogsImg = async (dogObj, fn) => {
   let result;
+  showLoading();
   try {
     result = await fetch(`${API}/breed/${dogObj.name}/images/random`);
   } catch (err) {
     console.error("error fetching img", err);
+    hideLoading();
   }
 
   if (result?.ok) {
@@ -57,7 +59,10 @@ const getDogsImg = async (dogObj, fn) => {
     dogObj.imageUrl = dogImageUrl;
     fn(dogObj, 3);
     // return dogImageUrl;
-  } else console.log(result?.status);
+  } else {
+    console.log(result?.status);
+    hideLoading();
+  }
 };
 
 function renderDogs(dogObj, breedLimit) {
@@ -89,7 +94,7 @@ function renderDogs(dogObj, breedLimit) {
         <h2 class="mainTitle">${dogName}</h2>
     </article>
     `;
-
+  hideLoading();
   document.getElementById("contentHolder").innerHTML += htmlCard;
 
   setTimeout(() => {
@@ -98,6 +103,7 @@ function renderDogs(dogObj, breedLimit) {
 }
 
 function search(char) {
+  showLoading();
   char = char.toLowerCase();
   const result = [...globalDogs].filter((dog) => dog[0].includes(char));
   if (result.length) {
@@ -110,6 +116,8 @@ function search(char) {
       };
       getDogsImg(newDog, renderDogs);
     }
+  } else {
+    hideLoading();
   }
 }
 
@@ -122,5 +130,16 @@ searchInput.addEventListener("keypress", function (event) {
     }
   }
 });
+
+function showLoading() {
+  const loading = document.querySelector(".loading");
+
+  loading.style.display = "flex";
+}
+
+function hideLoading() {
+  const loading = document.querySelector(".loading");
+  loading.style.display = "none";
+}
 
 getDogs(12);

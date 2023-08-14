@@ -154,7 +154,7 @@ main {
   border-radius: 10px;
   font-size: 2rem;
   transform: translate(-20px, -20px);
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in;
 }
 .sub-breed > ul > li {
   margin-bottom: 10px;
@@ -162,6 +162,7 @@ main {
 
 .card:hover .sub-breed {
   opacity: 1;
+  background-color: rgba(68, 68, 68, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -171,6 +172,32 @@ main {
   font-size: 2rem;
   text-align: center;
 }
+
+/* start loading animation */
+
+.loading {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  width: 80px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.loading img {
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* end loading animation */
 
 @media (min-width: 1100px) and (max-width: 1500px) {
   .wrapper {
