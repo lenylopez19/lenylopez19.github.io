@@ -94,6 +94,10 @@ body {
   justify-content: center;
 }
 
+.logoHolder:hover {
+  cursor: pointer;
+}
+
 main {
   /* display: flex; */
   height: inherit;

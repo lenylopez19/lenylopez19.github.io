@@ -134,4 +134,13 @@ function hideLoading() {
   loading.style.display = "none";
 }
 
-getDogs(12);
+getDogs(16);
+
+const logo = document.querySelector(".logoHolder");
+console.log(logo);
+
+logo.addEventListener("click", function () {
+  console.log("click registrado");
+  document.getElementById("contentHolder").innerHTML = "";
+  getDogs(16);
+});
