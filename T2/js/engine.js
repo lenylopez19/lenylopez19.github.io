@@ -7,7 +7,6 @@ function getRamdonDog(dogArr, maxDogs) {
   let numberOfDogs = dogArr.length - 1;
   for (let i = 0; i < maxDogs; i++) {
     const randomDog = Math.round(Math.random() * numberOfDogs);
-
     if (!newDogArr.includes(dogArr[randomDog]))
       newDogArr.push(dogArr[randomDog]);
     else i--;
@@ -21,15 +20,16 @@ const getDogs = async (numberOfDogs) => {
 
   try {
     result = await fetch(`${API}/${listAllDogs}`);
-  } catch {
-    console.error("something went wrong fetching the dogs info", err);
+  } catch (err) {
+    hideLoading();
+    showError("Woops, something went wrong.");
+    console.error("Error fetching the dogs info", err);
   }
 
   if (result?.ok) {
     const dataJson = await result.json();
     globalDogs = Object.entries(dataJson.message);
     const dogsToDisplay = getRamdonDog(globalDogs, numberOfDogs);
-
     for (const dog of dogsToDisplay) {
       const [dogName, dogBreeds] = dog;
       const dogObj = {
@@ -39,7 +39,11 @@ const getDogs = async (numberOfDogs) => {
       getDogsImg(dogObj, renderDogs);
     }
   } else {
-    console.log(`HTTP Response Code: ${result?.status}`);
+    hideLoading();
+    showError("Woops, something went wrong.");
+    console.error(
+      `Error fetching the dogs info, HTTP ResponseCode: ${result?.status}`
+    );
   }
 };
 
@@ -48,6 +52,8 @@ const getDogsImg = async (dogObj, fn) => {
   try {
     result = await fetch(`${API}/breed/${dogObj.name}/images/random`);
   } catch (err) {
+    hideLoading();
+    showError("Woops, something went wrong.");
     console.error("error fetching img", err);
   }
 
@@ -57,15 +63,18 @@ const getDogsImg = async (dogObj, fn) => {
     dogObj.imageUrl = dogImageUrl;
     fn(dogObj, 3);
   } else {
-    console.log(result?.status);
+    hideLoading();
+    showError("Woops, something went wrong.");
+    console.error(
+      `Error fetching the dogs info, HTTP ResponseCode: ${result?.status}`
+    );
   }
 };
 
-function renderDogs(dogObj, breedLimit) {
+function renderDogs(dogObj, breedLimit=3) {
   const { name: dogName, breed: breeds, imageUrl: dogImageUrl } = dogObj;
   let breedList = "";
   const breedExist = breeds.length;
-
   if (breedExist) {
     for (let i = 0; i < breeds.length; i++) {
       if (i >= breedLimit) break;
@@ -74,21 +83,19 @@ function renderDogs(dogObj, breedLimit) {
   } else {
     breedList = `<li>no breed</li>`;
   }
-
   const htmlCard = `
     <article id = "dog_${dogName}"class="card">
-        <div class="sub-breed">
-            <ul>
-                  ${breedList}
-            </ul>
-        </div>
-        <img onerror="this.src='assets/errorImg.jpeg'" id="IMG_${dogName}" src="${dogImageUrl}" class="dogImage" alt="${dogName}">
-        <h2 class="mainTitle">${dogName}</h2>
+      <div class="sub-breed">
+        <ul>
+          ${breedList}
+        </ul>
+      </div>
+      <img onerror="this.src='assets/errorImg.jpeg'" id="IMG_${dogName}" src="${dogImageUrl}" class="dogImage" alt="${dogName}">
+      <h2 class="mainTitle">${dogName}</h2>
     </article>
     `;
   hideLoading();
   document.getElementById("contentHolder").innerHTML += htmlCard;
-
   setTimeout(() => {
     document.getElementById(`dog_${dogName}`).style.opacity = 1;
   }, 200);
@@ -100,11 +107,9 @@ function search(char) {
   const result = [...globalDogs].filter((dog) => dog[0].includes(char));
   if (result.length) {
     for (const dog of result) {
-      const dogName = dog[0];
-      const dogBreeds = dog[1];
       const newDog = {
-        name: dogName,
-        breed: dogBreeds,
+        name: dog[0],
+        breed: dog[1],
       };
       getDogsImg(newDog, renderDogs);
     }
@@ -123,28 +128,37 @@ searchInput.addEventListener("keypress", function (event) {
   }
 });
 
-// Woops, something went wrong
-
-function showError(errorMsg){
-  const html = `
-  <div class="errorMsj">
-    <img src="assets/Group 1.png" alt="error" />
+function showError(errorMsg) {
+  const contentHolder = document.getElementById("contentHolder");
+  const errorMsjExist = contentHolder.querySelector(".errorMsj");
+  if (!errorMsjExist) {
+    const errorMsjElement = document.createElement("div");
+    errorMsjElement.className = "errorMsj";
+    const html =
+    `
+    <img src="assets/loadingError.png" alt="error" />
     <h2 class="errorTittle">${errorMsg}</h2>
-    <button class="reload">Try Again</button>
-  </div>
-  `;
+    `;
+    errorMsjElement.innerHTML = html;
+    const tryAgainBtn = document.createElement("button");
+    tryAgainBtn.className = "reload";
+    tryAgainBtn.innerText = "Try Again";
+    tryAgainBtn.addEventListener("click", init, { once: true });
+    errorMsjElement.append(tryAgainBtn);
+    contentHolder.append(errorMsjElement);
+  }
 }
 
-function hideError(){
-  const errorElement = document.querySelector(".errorMsj");
-  if(errorElement){
-    document.querySelector(".errorMsj").remove();
+function hideError() {
+  const contentHolder = document.getElementById("contentHolder");
+  const errorMsjExist = contentHolder.querySelector(".errorMsj");
+  if (errorMsjExist) {
+    errorMsjExist.remove();
   }
 }
 
 function showLoading() {
   const loading = document.querySelector(".loading");
-
   loading.style.display = "flex";
 }
 
@@ -153,12 +167,16 @@ function hideLoading() {
   loading.style.display = "none";
 }
 
-getDogs(16);
+const homeIcon = document.querySelector(".home");
 
-const logo = document.querySelector(".home");
-
-logo.addEventListener("click", function () {
-
+homeIcon.addEventListener("click", function () {
   document.getElementById("contentHolder").innerHTML = "";
   getDogs(16);
 });
+
+function init() {
+  document.getElementById("contentHolder").innerHTML = "";
+  getDogs(16);
+}
+
+init();
