@@ -54,6 +54,11 @@ body {
   gap: 10px;
 }
 
+.home{
+  display: flex;
+    align-items: center;
+    gap: 10px;
+}
 .searchIcon {
   width: 30px;
 }
@@ -94,7 +99,7 @@ body {
   justify-content: center;
 }
 
-.logoHolder:hover {
+.home:hover {
   cursor: pointer;
 }
 
@@ -176,6 +181,29 @@ main {
   font-size: 2rem;
   text-align: center;
 }
+
+.errorMsj{
+  text-align: center;
+ 
+
+}
+.errorTittle{
+  padding: 20px 50px
+}
+.errorMsj> img{
+  max-width: 400px;
+  width: 90%;
+}
+.reload{
+  margin:5px;
+  padding:1rem 2rem;
+  border-radius: 10px;
+  border-bottom: 3px solid gray;
+  font-size: 1.2rem;
+
+  cursor:pointer;
+}
+
 
 /* start loading animation */
 

@@ -123,6 +123,25 @@ searchInput.addEventListener("keypress", function (event) {
   }
 });
 
+// Woops, something went wrong
+
+function showError(errorMsg){
+  const html = `
+  <div class="errorMsj">
+    <img src="assets/Group 1.png" alt="error" />
+    <h2 class="errorTittle">${errorMsg}</h2>
+    <button class="reload">Try Again</button>
+  </div>
+  `;
+}
+
+function hideError(){
+  const errorElement = document.querySelector(".errorMsj");
+  if(errorElement){
+    document.querySelector(".errorMsj").remove();
+  }
+}
+
 function showLoading() {
   const loading = document.querySelector(".loading");
 
@@ -136,11 +155,10 @@ function hideLoading() {
 
 getDogs(16);
 
-const logo = document.querySelector(".logoHolder");
-console.log(logo);
+const logo = document.querySelector(".home");
 
 logo.addEventListener("click", function () {
-  console.log("click registrado");
+
   document.getElementById("contentHolder").innerHTML = "";
   getDogs(16);
 });
