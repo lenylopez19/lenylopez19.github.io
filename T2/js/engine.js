@@ -14,10 +14,9 @@ function getRamdonDog(dogArr, maxDogs) {
   return newDogArr;
 }
 
-const getDogs = async (numberOfDogs) => {
+const getDogs = async () => {
   showLoading();
   let result;
-
   try {
     result = await fetch(`${API}/${listAllDogs}`);
   } catch (err) {
@@ -29,7 +28,20 @@ const getDogs = async (numberOfDogs) => {
   if (result?.ok) {
     const dataJson = await result.json();
     globalDogs = Object.entries(dataJson.message);
-    const dogsToDisplay = getRamdonDog(globalDogs, numberOfDogs);
+    prepareDog();
+  } 
+  else {
+    hideLoading();
+    showError("Woops, something went wrong.");
+    console.error(
+      `Error fetching the dogs info, HTTP ResponseCode: ${result?.status}`
+    );
+  }
+};
+
+function prepareDog(){
+  showLoading();
+  const dogsToDisplay = getRamdonDog(globalDogs, homeDogs);
     for (const dog of dogsToDisplay) {
       const [dogName, dogBreeds] = dog;
       const dogObj = {
@@ -38,14 +50,7 @@ const getDogs = async (numberOfDogs) => {
       };
       getDogsImg(dogObj, renderDogs);
     }
-  } else {
-    hideLoading();
-    showError("Woops, something went wrong.");
-    console.error(
-      `Error fetching the dogs info, HTTP ResponseCode: ${result?.status}`
-    );
-  }
-};
+}
 
 const getDogsImg = async (dogObj, fn) => {
   let result;
@@ -61,8 +66,9 @@ const getDogsImg = async (dogObj, fn) => {
     const dataJson = await result.json();
     const dogImageUrl = dataJson.message;
     dogObj.imageUrl = dogImageUrl;
-    fn(dogObj, 3);
-  } else {
+    fn(dogObj);
+  } 
+  else {
     hideLoading();
     showError("Woops, something went wrong.");
     console.error(
@@ -120,11 +126,9 @@ function search(char) {
 
 const searchInput = document.getElementById("searchDog");
 searchInput.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    if (this.value) {
+  if (event.key === "Enter" && this.value) {
       document.getElementById("contentHolder").innerHTML = "";
       search(this.value);
-    }
   }
 });
 
@@ -171,12 +175,17 @@ const homeIcon = document.querySelector(".home");
 
 homeIcon.addEventListener("click", function () {
   document.getElementById("contentHolder").innerHTML = "";
-  getDogs(16);
+  prepareDog(homeDogs)
 });
 
 function init() {
   document.getElementById("contentHolder").innerHTML = "";
-  getDogs(16);
+  getDogs(homeDogs);
 }
 
+
+
+const homeDogs = 16;
+
 init();
+
