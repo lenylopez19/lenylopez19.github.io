@@ -205,6 +205,23 @@ main {
 }
 
 
+
+/* START search not found style */
+
+.searchNotFound{
+  max-width: 500px;
+  text-align: center;
+}
+
+.searchNotFound > img{
+  width: 100%;
+}
+
+
+
+/* END search not found style */
+
+
 /* start loading animation */
 
 .loading {

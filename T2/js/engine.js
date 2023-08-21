@@ -101,16 +101,17 @@ function renderDogs(dogObj, breedLimit=3) {
     </article>
     `;
   hideLoading();
-  document.getElementById("contentHolder").innerHTML += htmlCard;
+  mainContent.innerHTML += htmlCard;
   setTimeout(() => {
-    document.getElementById(`dog_${dogName}`).style.opacity = 1;
+    dogitem = document.getElementById(`dog_${dogName}`)
+    if (dogitem) dogitem.style.opacity = 1;
   }, 200);
 }
 
 function search(char) {
   showLoading();
   char = char.toLowerCase();
-  const result = [...globalDogs].filter((dog) => dog[0].includes(char));
+  const result = [...globalDogs].filter((dog) => dog[0].startsWith(char));
   if (result.length) {
     for (const dog of result) {
       const newDog = {
@@ -119,22 +120,28 @@ function search(char) {
       };
       getDogsImg(newDog, renderDogs);
     }
-  } else {
+  } 
+  else {
     hideLoading();
+    mainContent.innerHTML = `
+    <div class="searchNotFound"> 
+      <img src='assets/noResult.png' alt = 'no result found...' />
+      <h2>Woops, couldnt find anything.</h2>
+    </div> 
+    `
   }
 }
 
 const searchInput = document.getElementById("searchDog");
 searchInput.addEventListener("keypress", function (event) {
-  if (event.key === "Enter" && this.value) {
-      document.getElementById("contentHolder").innerHTML = "";
+  if (event.key == "Enter" && this.value) {
+      mainContent.innerHTML = "";
       search(this.value);
   }
 });
 
 function showError(errorMsg) {
-  const contentHolder = document.getElementById("contentHolder");
-  const errorMsjExist = contentHolder.querySelector(".errorMsj");
+  const errorMsjExist = mainContent.querySelector(".errorMsj");
   if (!errorMsjExist) {
     const errorMsjElement = document.createElement("div");
     errorMsjElement.className = "errorMsj";
@@ -154,8 +161,7 @@ function showError(errorMsg) {
 }
 
 function hideError() {
-  const contentHolder = document.getElementById("contentHolder");
-  const errorMsjExist = contentHolder.querySelector(".errorMsj");
+  const errorMsjExist = mainContent.querySelector(".errorMsj");
   if (errorMsjExist) {
     errorMsjExist.remove();
   }
@@ -172,19 +178,17 @@ function hideLoading() {
 }
 
 const homeIcon = document.querySelector(".home");
-
 homeIcon.addEventListener("click", function () {
-  document.getElementById("contentHolder").innerHTML = "";
+  mainContent.innerHTML = "";
   prepareDog(homeDogs)
 });
 
 function init() {
-  document.getElementById("contentHolder").innerHTML = "";
+  mainContent.innerHTML = "";
   getDogs(homeDogs);
 }
 
-
-
+const mainContent = document.getElementById("contentHolder");
 const homeDogs = 16;
 
 init();
