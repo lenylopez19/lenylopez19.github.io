@@ -1,0 +1,310 @@
+*{
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    
+   color: white;
+   font-family: sans-serif;
+
+
+    /* background: #141E30;
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  
+background: linear-gradient(to right, #243B55, #141E30);  */
+
+
+background: #000000;
+    /* background-size:400% 400%;
+    animation: movingGradiant 20s ease infinite; */
+}
+
+
+a{
+    font-weight: 100;
+}
+
+/* .bgFigure{
+    background-color: #673AB7;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    border-radius: 50%;
+    top:0;
+    right: -30px;
+} */
+
+/* START Background Animation */
+@keyframes movingGradiant{
+
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+/* END Background Animation */
+
+
+
+.wrapper{
+    max-width: 360px;
+    margin:0 auto;
+}
+/* START INFOWIDGET */
+
+/* Rectangle 1 */
+
+
+
+
+
+
+.infoWidget{
+    margin-top: 40px;
+    border:1px solid red;
+    padding: 30px;
+    background: rgba(17, 17, 17, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(73, 73, 73, 0.2);
+    position: relative;
+
+    background: rgba(40, 40, 40, 0.45);
+border: 1px solid rgba(113, 113, 113, 0.38);
+box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(38.3px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 15px;
+
+
+}
+
+.infoWidget::after{
+    content: '';
+    background-color: #673AB7;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+
+    top:0;
+    right: 0;
+    z-index: -1;
+    filter: blur(50px);
+
+}
+.infoWidget::before{
+    content: '';
+    background-color: #673AB7;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+
+    bottom:-20px;
+    left: -40px;
+    z-index: -1;
+    filter: blur(50px);
+
+}
+
+.infoWidget > .infoSection{
+    display: flex;
+}
+    /* start PICTURE section LEFT */
+.infoWidget > .infoSection > img.profilePicture{
+    width: 130px;
+    border-radius: 15px;
+}
+    /* end PICTURE section LEFT */
+
+    /* start personal details section RIGTH */
+.infoWidget > .infoSection > .personDetails{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.infoWidget > .infoSection > .personDetails > .name{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.infoWidget > .infoSection > .personDetails > .description{
+    font-size : 0.80rem;
+    padding: 10px 0;
+    line-height: 18px;
+}
+
+.infoWidget > .infoSection > .personDetails > .logosContainer{
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.infoWidget > .infoSection > .personDetails > .logosContainer > img{
+    width: 40px;
+    height: 40px;
+}
+    /* end personal details section RIGTH */
+    /* start Reosurces section */
+.infoWidget > .resources{
+    padding: 30px 35px;
+}
+
+.infoWidget .button{
+    display: flex;
+    border-radius: 15px;
+    color:white;
+    font-size: 0.90rem;
+    align-items: center;
+    text-align: center;
+    margin-top:20px;
+}
+
+.infoWidget > .resources #pensum{
+    background: linear-gradient(90deg, #39B698 0%, rgba(23, 149, 220, 0.64) 100%);
+}
+
+.infoWidget > .resources #cv{
+    background: linear-gradient(90deg, rgba(15, 166, 253, 0.64) 0%, #752291 100%);
+
+}
+.infoWidget > .resources > .button > img{
+    width: 40px;
+    margin-left:-10px;
+}
+.infoWidget > .resources > .button > span{
+    width: 100%;
+}
+    /* end Reosurces section */
+    /* start Social section */
+.infoWidget > .social {
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.infoWidget > .social > a > img{
+    width: 40px;
+}
+.infoWidget > .social > a {
+    font-size: 1.4rem;
+    font-weight: 100;
+}
+    /* end Social section */
+
+/* END - INFOWIDGET */
+
+/* START - SKILLS */
+
+.skills{
+    margin-top:80px;
+}
+
+.sectionTitleContainer{
+    display: flex;
+    align-items: center;
+    margin-bottom:20px;
+}
+.sectionTitleContainer > .iconTitle{
+    width: 45px;
+}
+.sectionTitleContainer > .sectionTittle{
+   font-size: 1.6rem;
+   margin-left: 10px;
+
+}
+
+
+/* END - SKILLS */
+
+.item{
+    padding-left: 20px;
+    width: 90%;
+    margin:0 auto;
+    border:1px solid red;
+    margin-top:10px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+
+
+
+    background: rgba(40, 40, 40, 0.45);
+border: 1px solid rgba(113, 113, 113, 0.38);
+box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
+backdrop-filter: blur(15px);
+/* Note: backdrop-filter has minimal browser support */
+border-radius: 15px;
+}
+.item > img{
+    width: 35px;
+}
+.item > h3{
+    width: 35px;
+    margin-left:15px;
+    font-size: 1.3rem;
+    width: 100%;
+    font-weight: 100;
+
+}
+
+
+/* START - LEARNING */
+
+.learning{
+    margin-top:50px;
+}  
+/* END - LEARNING */
+
+/* START - ROADMAP */
+.roadMap{
+    margin-top:80px;
+}
+article.roadMap > section.sectionTitleContainer{
+    flex-direction: column;
+}
+
+.roadMap > .sectionTitleContainer > .iconTitle{
+    width: 100px;
+}
+.roadMap > .itemMaster .subSectionTitleContainer > img{
+    width: 60px;
+}
+
+
+.itemMaster{
+    width: 90%;
+    margin:0 auto;
+    margin-top:10px;
+    display: flex;
+    padding: 15px;
+    border-radius: 15px;
+    flex-direction: column;
+    background: rgba(40, 40, 40, 0.45);
+    border: 1px solid rgba(113, 113, 113, 0.38);
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+}
+
+.subSectionTitleContainer{
+    display: flex;
+    align-items: center;
+    margin-bottom:20px;
+    width: 100%;
+}
+
+
+/* END - ROADMAP */
