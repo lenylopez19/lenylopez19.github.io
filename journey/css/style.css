@@ -5,37 +5,14 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-
 body{
-    
    color: white;
    font-family: sans-serif;
-
-
-    /* background: #141E30;
-background: -webkit-linear-gradient(to right, #243B55, #141E30);  
-background: linear-gradient(to right, #243B55, #141E30);  */
-
-
-background: #000000;
-    /* background-size:400% 400%;
-    animation: movingGradiant 20s ease infinite; */
+    background: #000000;
 }
-
-
 a{
     font-weight: 100;
 }
-
-/* .bgFigure{
-    background-color: #673AB7;
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    border-radius: 50%;
-    top:0;
-    right: -30px;
-} */
 
 /* START Background Animation */
 @keyframes movingGradiant{
@@ -53,42 +30,22 @@ a{
 }
 /* END Background Animation */
 
-
-
 .wrapper{
     max-width: 360px;
     margin:0 auto;
 }
 /* START INFOWIDGET */
 
-/* Rectangle 1 */
-
-
-
-
-
-
 .infoWidget{
     margin-top: 40px;
-    border:1px solid red;
     padding: 30px;
-    background: rgba(17, 17, 17, 0.34);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(73, 73, 73, 0.2);
     position: relative;
-
     background: rgba(40, 40, 40, 0.45);
-border: 1px solid rgba(113, 113, 113, 0.38);
-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(38.3px);
-/* Note: backdrop-filter has minimal browser support */
-border-radius: 15px;
-
-
+    border: 1px solid rgba(113, 113, 113, 0.38);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(38px);
+    -webkit-backdrop-filter: blur(38px);
+    border-radius: 15px;
 }
 
 .infoWidget::after{
@@ -97,12 +54,10 @@ border-radius: 15px;
     width: 200px;
     height: 200px;
     position: absolute;
-
     top:0;
     right: 0;
     z-index: -1;
     filter: blur(50px);
-
 }
 .infoWidget::before{
     content: '';
@@ -110,12 +65,10 @@ border-radius: 15px;
     width: 300px;
     height: 150px;
     position: absolute;
-
     bottom:-20px;
     left: -40px;
     z-index: -1;
     filter: blur(50px);
-
 }
 
 .infoWidget > .infoSection{
@@ -224,29 +177,20 @@ border-radius: 15px;
    margin-left: 10px;
 
 }
-
-
 /* END - SKILLS */
-
 .item{
     padding-left: 20px;
     width: 90%;
     margin:0 auto;
-    border:1px solid red;
     margin-top:10px;
     display: flex;
     align-items: center;
     padding: 15px;
-    border-radius: 15px;
-
-
-
     background: rgba(40, 40, 40, 0.45);
-border: 1px solid rgba(113, 113, 113, 0.38);
-box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
-backdrop-filter: blur(15px);
-/* Note: backdrop-filter has minimal browser support */
-border-radius: 15px;
+    border: 1px solid rgba(113, 113, 113, 0.38);
+    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
 }
 .item > img{
     width: 35px;
@@ -260,7 +204,6 @@ border-radius: 15px;
 
 }
 
-
 /* START - LEARNING */
 
 .learning{
@@ -272,6 +215,7 @@ border-radius: 15px;
 .roadMap{
     margin-top:80px;
 }
+
 article.roadMap > section.sectionTitleContainer{
     flex-direction: column;
 }
@@ -282,7 +226,6 @@ article.roadMap > section.sectionTitleContainer{
 .roadMap > .itemMaster .subSectionTitleContainer > img{
     width: 60px;
 }
-
 
 .itemMaster{
     width: 90%;
