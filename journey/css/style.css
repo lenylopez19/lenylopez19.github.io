@@ -14,6 +14,14 @@ a{
     font-weight: 100;
 }
 
+.hoverable{
+    transition: transform 0.3s ease;
+}
+.hoverable:hover{
+    transform: scale(1.1);
+
+}
+
 /* START Background Animation */
 @keyframes movingGradiant{
 
@@ -38,7 +46,7 @@ a{
 
 .infoWidget{
     margin-top: 40px;
-    padding: 30px;
+    padding: 40px 30px 20px;
     position: relative;
     background: rgba(40, 40, 40, 0.45);
     border: 1px solid rgba(113, 113, 113, 0.38);
@@ -68,11 +76,12 @@ a{
     bottom:-20px;
     left: -40px;
     z-index: -1;
-    filter: blur(50px);
+    filter: blur(90px);
 }
 
 .infoWidget > .infoSection{
     display: flex;
+    justify-content: space-between;
 }
     /* start PICTURE section LEFT */
 .infoWidget > .infoSection > img.profilePicture{
@@ -83,9 +92,9 @@ a{
 
     /* start personal details section RIGTH */
 .infoWidget > .infoSection > .personDetails{
-    padding-left: 20px;
     display: flex;
     flex-direction: column;
+    width: 150px;
 }
 
 .infoWidget > .infoSection > .personDetails > .name{
@@ -113,6 +122,8 @@ a{
     /* start Reosurces section */
 .infoWidget > .resources{
     padding: 30px 35px;
+    max-width: 400px;
+        margin: 0 auto;
 }
 
 .infoWidget .button{
@@ -240,6 +251,7 @@ article.roadMap > section.sectionTitleContainer{
     box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
     border-radius: 15px;
+    margin-bottom:50px;
 }
 
 .subSectionTitleContainer{
@@ -251,3 +263,66 @@ article.roadMap > section.sectionTitleContainer{
 
 
 /* END - ROADMAP */
+
+
+/*================ START TABLET/ LOW DPI DESKTOP VIEW=================== */
+
+@media screen and (min-width: 600px){
+    /* *{
+        border:1px solid red;
+    } */
+    .wrapper{
+        max-width: 700px;
+        margin:0 auto;
+    }
+    .infoWidget{
+        padding: 55px 0px 37px;
+    }
+    .infoWidget::before{
+        width: 407px;
+        height: 235px;
+        bottom: -20px;
+        left: -40px;
+        filter: blur(90px);
+    }
+    .infoWidget::after{
+        width: 365px;
+        height: 274px;
+        filter: blur(90px);
+        
+    }
+    .infoWidget > .infoSection {
+        max-width: 530px;
+        margin: 0 auto;
+    }
+    .infoWidget > .infoSection > img.profilePicture {
+        width: 230px;
+    }
+    .infoWidget > .infoSection > .personDetails{
+        width: 255px;
+    }
+    .infoWidget > .infoSection > .personDetails > .name {
+        font-size: 2.4rem;
+    }
+    .infoWidget > .infoSection > .personDetails > .description {
+        font-size: 1.0rem;
+        font-weight: 100;
+        line-height: 23px;
+    }
+    .infoWidget > .infoSection > .personDetails > .logosContainer > img {
+        width: 60px;
+        height: 60px;
+    }
+    .infoWidget > .resources > .button > span {
+        font-size: 1rem;
+    }
+    .itemMaster{
+        padding-bottom: 50px;
+    }
+}
+
+
+
+
+
+/*================ END TABLET/ LOW DPI DESKTOP VIEW=================== */
