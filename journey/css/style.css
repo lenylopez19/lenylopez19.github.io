@@ -5,6 +5,9 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+img{
+    width: 100%;
+}
 body{
    color: white;
    font-family: sans-serif;
@@ -16,6 +19,7 @@ a{
 
 .hoverable{
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 .hoverable:hover{
     transform: scale(1.1);
@@ -261,8 +265,99 @@ article.roadMap > section.sectionTitleContainer{
     width: 100%;
 }
 
-
 /* END - ROADMAP */
+
+
+/* START Project Cards */
+
+section.infoWidget.projectCard {
+    padding: 20px 15px;
+}
+
+section.infoWidget.projectCard > .subSectionTitleContainer{
+    gap:10px;
+}
+section.infoWidget.projectCard > .subSectionTitleContainer .projectLogo{
+    width: 40px;
+}
+section.infoWidget.projectCard > .subSectionTitleContainer .projectName{
+    font-weight: 100;
+    font-size: 1.4rem;
+}
+section.infoWidget.projectCard > .subSectionTitleContainer .projectButton{
+    border:2px solid #673AB7;
+    padding:10px;
+    border-radius: 10px;
+    color:white;    
+}
+
+section.infoWidget.projectCard > .subSectionTitleContainer .projectButton > img{
+   width: 30px;  
+}
+
+
+
+section.infoWidget.projectCard > .subSectionTitleContainer .code{
+   margin-left: auto;
+}
+
+section.infoWidget.projectCard .projectSkillsContainer {
+    /* border:1px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+section.infoWidget.projectCard .projectSkillsContainer > .item {
+
+    flex-basis: content;
+    padding:10px 30px 10px 10px;
+    margin: 0 10px 10px 0;
+    gap: 10px;
+}
+
+section.infoWidget.projectCard .projectSkillsContainer > .item > img{
+    width: 25px;
+} 
+
+section.infoWidget.projectCard .projectSkillsContainer > .item > h3{
+    font-size: 1rem;
+    margin-left: 0;
+} 
+
+section.infoWidget.projectCard .projectDescription > p {
+    font-size: 0.9rem;
+    font-weight: 100;
+    padding:15px 5px 30px;
+}
+
+
+section.infoWidget.projectCard .screenshotsContainer{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    gap: 5px;
+}
+
+section.infoWidget.projectCard .screenshotsContainer .bothVertical{
+    width: 50%;
+
+}
+
+
+
+section.infoWidget.projectCard .screenshotsContainer > .horizontalScreenShot {
+    width: 70%;
+}
+section.infoWidget.projectCard .screenshotsContainer > .verticalScreenShot {
+    width: 30%;
+   
+}
+
+/* END Project Cards */
+
+
+
 
 
 /*================ START TABLET/ LOW DPI DESKTOP VIEW=================== */
