@@ -7,8 +7,36 @@
     <meta name="description" content="website of my personal journy in the world as a developer.">
     <meta name="keywords" content="html,css,js,figma,portfolio">
     <link rel="stylesheet" href="css/style.css">
+    <script src="/js/engine.js" defer ></script>
 </head>
 <body>
+
+    <!-- start imageviewer test -->
+
+    <!-- <div class="projectCard glassCard" id="imageViewerCard"" >
+        <section class="subSectionTitleContainer">
+            <img class="projectLogo" src="assets/icons/figma.png" alt="">
+            <h3 class="projectName">UI designs</h3>
+            <button class="projectButton prev">&lt; Prev</button>
+            <button class="projectButton next">Next &gt; </button>
+        </section>
+        <section class="pictureController">
+            <div class="circle circleSelected"></div>
+            <div class="circle "></div>
+            <div class="circle "></div>
+            <div class="circle "></div>
+            <div class="circle "></div>
+            <div class="circle "></div>
+            <div class="circle "></div>
+        </section>
+        <section class="pictureContainer">
+        </section>
+    </div> -->
+
+
+    <!-- end imageviewer test -->
+
+
     <header>
         <div class="wrapper">
             <article class="infoWidget">
@@ -38,7 +66,7 @@
 
     <div class="wrapper">
 
-        <section class="projectCard infoWidget">
+        <section data-projectId= "1" class="projectCard infoWidget">
             
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/icons/figma.png" alt="">
@@ -47,26 +75,8 @@
                 <!-- <a href="https://lenylopez19.github.io/T2/" target="_blank" class="projectButton live"><img src="assets/icons/demoIcon.png" alt=""></a> -->
             </section>
 
-            <!-- <section class="projectSkillsContainer">
-                <section class="item">
-                    <img src="assets/icons/javascript.png" alt="">
-                    <h3>JavaScript</h3>
-                </section>
-                <section class="item">
-                    <img src="assets/icons/html.png" alt="">
-                    <h3>HTML 5</h3>
-                </section>
-                <section class="item">
-                    <img src="assets/icons/css.png" alt="">
-                    <h3>CSS 3</h3>
-                </section>
-               
-            </section> -->
-
-            
-
             <section class="screenshotsContainer">
-                <img class="hoverable" src="assets/figmaDesigns/allDesigns.png" alt="website desktop view">
+                <img class="hoverable projectImg" src="assets/figmaDesigns/allDesigns.png" alt="website desktop view">
                 <!-- <img class="hoverable verticalScreenShot" src="assets/screenshots/doggyDogsScreen2.png" alt="website mobile view"> -->
             </section>
             
@@ -80,12 +90,7 @@
             
         </section>
 
-
-
-
-
-
-        <section class="projectCard infoWidget">
+        <section data-projectId="2" class="projectCard infoWidget">
             
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/logos/doggydogs.png" alt="">
@@ -120,8 +125,8 @@
             </section>
 
             <section class="screenshotsContainer">
-                <img class="hoverable horizontalScreenShot" src="assets/screenshots/doggydogsScreen1.png" alt="website desktop view">
-                <img class="hoverable verticalScreenShot" src="assets/screenshots/doggyDogsScreen2.png" alt="website mobile view">
+                <img class="hoverable horizontalScreenShot projectImg" src="assets/screenshots/doggydogsScreen1.png" alt="website desktop view">
+                <img class="hoverable verticalScreenShot projectImg" src="assets/screenshots/doggyDogsScreen2.png" alt="website mobile view">
             </section>
             
 

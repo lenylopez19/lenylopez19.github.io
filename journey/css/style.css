@@ -5,9 +5,7 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-img{
-    width: 100%;
-}
+
 body{
    color: white;
    font-family: sans-serif;
@@ -16,7 +14,13 @@ body{
 a{
     font-weight: 100;
 }
-
+button{
+    background-color: transparent;
+    font-size: 1rem;
+}
+img{
+    width: 100%;
+}
 .hoverable{
     transition: transform 0.3s ease;
     cursor: pointer;
@@ -25,6 +29,85 @@ a{
     transform: scale(1.1);
 
 }
+
+.glassCard{
+    background: rgba(40, 40, 40, 0.45);
+    border: 1px solid rgba(113, 113, 113, 0.38);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 15px;
+}
+
+/* START imageViewer */
+
+#imageViewerCard{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+#imageViewerCard > .subSectionTitleContainer{
+    margin: 0;
+}
+
+#imageViewerCard.projectCard{
+    padding: 20px 15px 10px;
+}
+
+.closeBtn{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    background-color: rgb(161, 79, 79);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+}
+
+.next{
+
+}
+.prev{
+    margin-left: auto;
+}
+
+.pictureController{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 5px 0;
+    justify-content: center;
+}
+
+.circle{
+    border: 1px solid white;
+    width: 20px;
+    height: 20px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    
+}
+
+.circle.circleSelected{
+   background-color: white;
+}
+
+.pictureContainer{
+
+    /* background-image: url('../assets/figmaDesigns/clothingStore1.png'); */
+
+    background-position: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-grow: 1;
+}
+
+/* END imageViewer */
 
 /* START Background Animation */
 @keyframes movingGradiant{
@@ -156,9 +239,9 @@ a{
     width: 100%;
 }
     /* end Reosurces section */
+
     /* start Social section */
 .infoWidget > .social {
-    /* border:1px solid red; */
     display: flex;
     justify-content: space-evenly;
 }
@@ -270,45 +353,45 @@ article.roadMap > section.sectionTitleContainer{
 
 /* START Project Cards */
 
-section.infoWidget.projectCard {
+.projectCard {
     padding: 20px 15px;
 }
 
-section.infoWidget.projectCard > .subSectionTitleContainer{
+.projectCard .subSectionTitleContainer{
     gap:10px;
 }
-section.infoWidget.projectCard > .subSectionTitleContainer .projectLogo{
+.projectCard .subSectionTitleContainer .projectLogo{
     width: 40px;
 }
-section.infoWidget.projectCard > .subSectionTitleContainer .projectName{
+.projectCard .subSectionTitleContainer .projectName{
     font-weight: 100;
     font-size: 1.4rem;
 }
-section.infoWidget.projectCard > .subSectionTitleContainer .projectButton{
+.projectCard .subSectionTitleContainer .projectButton{
     border:2px solid #673AB7;
     padding:10px;
     border-radius: 10px;
     color:white;    
 }
 
-section.infoWidget.projectCard > .subSectionTitleContainer .projectButton > img{
+.projectCard > .subSectionTitleContainer .projectButton > img{
    width: 30px;  
 }
 
 
 
-section.infoWidget.projectCard > .subSectionTitleContainer .code{
+.projectCard > .subSectionTitleContainer .code{
    margin-left: auto;
 }
 
-section.infoWidget.projectCard .projectSkillsContainer {
+.projectCard .projectSkillsContainer {
     /* border:1px solid red; */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 
-section.infoWidget.projectCard .projectSkillsContainer > .item {
+.projectCard .projectSkillsContainer > .item {
 
     flex-basis: content;
     padding:10px 30px 10px 10px;
@@ -316,23 +399,23 @@ section.infoWidget.projectCard .projectSkillsContainer > .item {
     gap: 10px;
 }
 
-section.infoWidget.projectCard .projectSkillsContainer > .item > img{
+.projectCard .projectSkillsContainer > .item > img{
     width: 25px;
 } 
 
-section.infoWidget.projectCard .projectSkillsContainer > .item > h3{
+.projectCard .projectSkillsContainer > .item > h3{
     font-size: 1rem;
     margin-left: 0;
 } 
 
-section.infoWidget.projectCard .projectDescription > p {
+.projectCard .projectDescription > p {
     font-size: 0.9rem;
     font-weight: 100;
     padding:15px 5px 30px;
 }
 
 
-section.infoWidget.projectCard .screenshotsContainer{
+.projectCard .screenshotsContainer{
     display: flex;
     align-items: center;
     padding-bottom: 20px;
@@ -346,10 +429,10 @@ section.infoWidget.projectCard .screenshotsContainer .bothVertical{
 
 
 
-section.infoWidget.projectCard .screenshotsContainer > .horizontalScreenShot {
+.projectCard .screenshotsContainer > .horizontalScreenShot {
     width: 70%;
 }
-section.infoWidget.projectCard .screenshotsContainer > .verticalScreenShot {
+.projectCard .screenshotsContainer > .verticalScreenShot {
     width: 30%;
    
 }
@@ -371,7 +454,7 @@ section.infoWidget.projectCard .screenshotsContainer > .verticalScreenShot {
         margin:0 auto;
     }
     .infoWidget{
-        padding: 55px 0px 37px;
+        padding: 55px 30px 37px;
     }
     .infoWidget::before{
         width: 407px;
