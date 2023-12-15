@@ -196,7 +196,7 @@ function seekProjectId(elem){
 }
 
 function figmaDesignsModal(){
-    const modalWindow = createModal('Ui designs','../assets/icons/figma.png');
+    const modalWindow = createModal('Ui designs','assets/icons/figma.png');
     const nextButton = modalWindow.querySelector('.next');
     // console.log(nextButton);
     nextButton.addEventListener('click',function(){

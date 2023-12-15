@@ -3,33 +3,33 @@
         {
             "id":1,
             "projectName":"Ui designs",
-            "projectIcon":"../assets/icons/figma.png",
+            "projectIcon":"assets/icons/figma.png",
             "images":[
-                "../assets/figmaDesigns/pcStore1.png",
-                "../assets/figmaDesigns/pcStore2.png",
-                "../assets/figmaDesigns/pcStore3.png",
-                "../assets/figmaDesigns/pcStore4.png",
-                "../assets/figmaDesigns/pcStore5.png",
-                "../assets/figmaDesigns/clothingStore1.png",
-                "../assets/figmaDesigns/clothingStore2.png",
-                "../assets/figmaDesigns/clothingStore3.png",
-                "../assets/figmaDesigns/clothingStore4.png",
-                "../assets/figmaDesigns/clientsTrack1.png",
-                "../assets/figmaDesigns/clientsTrack2.png",
-                "../assets/figmaDesigns/clientsTrack3.png",
-                "../assets/figmaDesigns/clientsTrack4.png"
+                "assets/figmaDesigns/pcStore1.png",
+                "assets/figmaDesigns/pcStore2.png",
+                "assets/figmaDesigns/pcStore3.png",
+                "assets/figmaDesigns/pcStore4.png",
+                "assets/figmaDesigns/pcStore5.png",
+                "assets/figmaDesigns/clothingStore1.png",
+                "assets/figmaDesigns/clothingStore2.png",
+                "assets/figmaDesigns/clothingStore3.png",
+                "assets/figmaDesigns/clothingStore4.png",
+                "assets/figmaDesigns/clientsTrack1.png",
+                "assets/figmaDesigns/clientsTrack2.png",
+                "assets/figmaDesigns/clientsTrack3.png",
+                "assets/figmaDesigns/clientsTrack4.png"
             ]
         },
         {
             "id":2,
             "projectName":"Doggydogs",
-            "projectIcon":"../assets/logos/doggydogs.png",
+            "projectIcon":"assets/logos/doggydogs.png",
             "images":[
-                "../assets/doggyDogs/doggydogs2.png",
-                "../assets/doggyDogs/doggydogs1.png",
-                "../assets/doggyDogs/doggydogs1b.png",
-                "../assets/doggyDogs/doggydogs3.png",
-                "../assets/doggyDogs/doggydogs4.png"
+                "assets/doggyDogs/doggydogs2.png",
+                "assets/doggyDogs/doggydogs1.png",
+                "assets/doggyDogs/doggydogs1b.png",
+                "assets/doggyDogs/doggydogs3.png",
+                "assets/doggyDogs/doggydogs4.png"
             ]
         }
     ]
