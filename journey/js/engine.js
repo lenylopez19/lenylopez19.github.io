@@ -74,7 +74,6 @@ function createModal(title,logoUrl){
         }
     )
     modalWindow.append(pictureContainer);
-
     return modalWindow;
 }
 
@@ -91,15 +90,11 @@ function closeModal(){
     unlockPage();
 }
 
-
 async function displayImgWithId(imgId,projectId){
     const imgContainer = document.querySelector(".pictureContainer");
     const {images} = await getProjectFromId(projectId);
-    console.log(imgContainer);
     const newUrl = 'url('+images[imgId-1]+')';
-
     imgContainer.style.backgroundImage = newUrl ; 
-
     imgContainer.dataset.imgid = imgId;
  
 }
@@ -136,7 +131,6 @@ function setActiveDot(imgId){
 
 function deactiveDot(){
     const dotController = document.querySelectorAll(".circle");
-    console.log(dotController);
     dotController.forEach(circle => {
         if(circle.classList.contains("circleSelected")){
             circle.classList.remove('circleSelected');
@@ -152,24 +146,14 @@ function getDisplayedImgId(){
 }
 
 async function createProjectModal(element){
-    //conseguir el id del projecto que se clicko la foto
     const projectId = seekProjectId(element);
-    //fetchear la data del projecto
-
     const {projectName,projectIcon,images} = await getProjectFromId(parseInt(projectId));
-    // const projectData = await getProjectFromId(parseInt(projectId));
-    // console.log(projectData);
-
-    //enviarle los parametros del nombre y el icono a la funcion createModal
     const modalWindow = createModal(projectName,projectIcon);
-    //por ahora agregarle los eventos a los botones de next y prev
     const nextBtn = modalWindow.querySelector(".next");
     nextBtn.addEventListener("click",() => {nextImg(projectId)});
     const prevBtn = modalWindow.querySelector(".prev");
     prevBtn.addEventListener("click", () => {prevImg(projectId)})
-    //popular el widget de image selector
     const imageDots = modalWindow.querySelector(".pictureController");
-    // console.log(images);
     for(let i = 0; i < images.length ; i++ ){
        const dotElement = generateElement({
             tag:'div',
@@ -181,7 +165,6 @@ async function createProjectModal(element){
     }
     lockPage();
     modalWindow.style.top = window.scrollY + "px";
-    //mostrar una imagen por default en el picture content.
     const pictureContainer = modalWindow.querySelector('.pictureContainer');
     pictureContainer.style.backgroundImage = "url("+images[0]+")";
     pictureContainer.dataset.imgid = 1;
@@ -193,17 +176,6 @@ function seekProjectId(elem){
         elem = elem.parentElement;
     }
     return parseInt(elem.dataset.projectid);
-}
-
-function figmaDesignsModal(){
-    const modalWindow = createModal('Ui designs','assets/icons/figma.png');
-    const nextButton = modalWindow.querySelector('.next');
-    // console.log(nextButton);
-    nextButton.addEventListener('click',function(){
-        alert('muy duro men');
-    });
-    const pictureCont = modalWindow.querySelector('.pictureContainer');
-    return modalWindow;
 }
 
 async function getProjectFromId(id){
@@ -218,7 +190,6 @@ async function queryAllProjects(){
     const res = await fetch('data/data.json');
     return await res.json();
 }
-
 
 const clickableImg = document.querySelectorAll(".projectImg");
 clickableImg.forEach((element) => {
