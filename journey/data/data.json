@@ -31,7 +31,77 @@
                 "assets/doggyDogs/doggydogs3.png",
                 "assets/doggyDogs/doggydogs4.png"
             ]
+        },
+        {
+            "id":3,
+            "projectName":"CloudTodoList",
+            "projectIcon":"assets/logos/cloudTasks.png",
+            "images":[
+                "assets/cloudTodoList/cloud1.png",
+                "assets/cloudTodoList/cloud2.png",
+                "assets/cloudTodoList/cloud3.png",
+                "assets/cloudTodoList/cloud4.png",
+                "assets/cloudTodoList/cloud5.png",
+                "assets/cloudTodoList/cloud6.png"
+            ]
+        },
+        {
+            "id":3,
+            "projectName":"CloudTodoList",
+            "projectIcon":"assets/logos/cloudTasks.png",
+            "images":[
+                "assets/cloudTodoList/cloud1.png",
+                "assets/cloudTodoList/cloud2.png",
+                "assets/cloudTodoList/cloud3.png",
+                "assets/cloudTodoList/cloud4.png",
+                "assets/cloudTodoList/cloud5.png",
+                "assets/cloudTodoList/cloud6.png"
+            ]
+        },   
+        {
+            "id":4,
+            "projectName":"validatedForm",
+            "projectIcon":"assets/logos/validatedForm.png",
+            "images":[
+                "assets/validatedForm/validated1.png",
+                "assets/validatedForm/validated2.png",
+                "assets/validatedForm/validated3.png",
+                "assets/validatedForm/validated4.png"
+            ]
+        },   
+        {
+            "id":5,
+            "projectName":"Workit",
+            "projectIcon":"assets/logos/workit.png",
+            "images":[
+                "assets/workit/workit1.png",
+                "assets/workit/workit2.png",
+                "assets/workit/workit3.png"
+            ]
+        },   
+        {
+            "id":6,
+            "projectName":"Elca Comayor",
+            "projectIcon":"assets/logos/elca.png",
+            "images":[
+                "assets/elca/elca1.png",
+                "assets/elca/elca2.png",
+                "assets/elca/elca3.png",
+                "assets/elca/elca4.png",
+                "assets/elca/elca5.png",
+                "assets/elca/elca6.png",
+                "assets/elca/elca7.png",
+                "assets/elca/elca8.png",
+                "assets/elca/elca9.png",
+                "assets/elca/elca10.png",
+                "assets/elca/elca11.png",
+                "assets/elca/elca12.png",
+                "assets/elca/elca13.png",
+                "assets/elca/elca14.png",
+                "assets/elca/elca15.png" 
+            ]
         }
+
     ]
 
 }
