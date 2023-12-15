@@ -215,15 +215,10 @@ async function getProjectFromId(id){
 }
 
 async function queryAllProjects(){
-    const res = await fetch('../data/data.json');
+    const res = await fetch('data/data.json');
     return await res.json();
 }
 
-// async function getImages(){
-//     const imagesResponse = await fetch('../data/data.json');
-//     const project = await imagesResponse.json();
-//     return project;
-// }
 
 const clickableImg = document.querySelectorAll(".projectImg");
 clickableImg.forEach((element) => {
