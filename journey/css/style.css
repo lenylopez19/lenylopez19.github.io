@@ -4,8 +4,13 @@
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: -apple-system, inter;
 }
 
+@font-face {
+    font-family: inter;
+    src: url(/fonts/Inter-Regular.ttf);
+}
 html{
     height: -webkit-fill-available;
     min-height: 100%;
@@ -21,9 +26,7 @@ body{
     overflow: auto;
     touch-action: pan-y;
 }
-a{
-    font-weight: 100;
-}
+
 button{
     background-color: transparent;
     font-size: 1rem;
@@ -141,7 +144,6 @@ img{
     position: relative;
     background: rgba(40, 40, 40, 0.45);
     border: 1px solid rgba(113, 113, 113, 0.38);
-    /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); */
     backdrop-filter: blur(38px); 
     -webkit-backdrop-filter: blur(38px);
     border-radius: 15px;
@@ -180,6 +182,7 @@ img{
 .infoWidget > .infoSection > img.profilePicture{
     width: 130px;
     border-radius: 15px;
+    object-fit: cover;
 }
     /* end PICTURE section LEFT */
 
@@ -256,7 +259,6 @@ img{
 }
 .infoWidget > .social > a {
     font-size: 1.4rem;
-    font-weight: 100;
 }
     /* end Social section */
 
@@ -292,8 +294,6 @@ img{
     padding: 15px;
     background: rgba(40, 40, 40, 0.45);
     border: 1px solid rgba(113, 113, 113, 0.38);
-    /* box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25); */
-    /* backdrop-filter: blur(15px); */
     border-radius: 15px;
 }
 .item > img{
@@ -341,8 +341,6 @@ article.roadMap > section.sectionTitleContainer{
     flex-direction: column;
     background: rgba(40, 40, 40, 0.45);
     border: 1px solid rgba(113, 113, 113, 0.38);
-    /* box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25); */
-    /* backdrop-filter: blur(15px); */
     border-radius: 15px;
     margin-bottom:50px;
 }
@@ -370,7 +368,7 @@ article.roadMap > section.sectionTitleContainer{
     width: 40px;
 }
 .projectCard .subSectionTitleContainer .projectName{
-    font-weight: 100;
+    font-weight: 300;
     font-size: 1.4rem;
 }
 .projectCard .subSectionTitleContainer .projectButton{
@@ -378,21 +376,18 @@ article.roadMap > section.sectionTitleContainer{
     border-radius: 10px;
     color:white;    
     background: linear-gradient(45deg, #673ab7 , #8054cd );
-    /* background: linear-gradient(45deg, #5b3c91 , #9a3788 ); */
 }
 
 .projectCard > .subSectionTitleContainer .projectButton > img{
    width: 30px;  
 }
 
-
-
 .projectCard > .subSectionTitleContainer .code{
    margin-left: auto;
 }
 
 .projectCard .projectSkillsContainer {
-    /* border:1px solid red; */
+
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -416,8 +411,8 @@ article.roadMap > section.sectionTitleContainer{
 } 
 
 .projectCard .projectDescription > p {
-    font-size: 0.9rem;
-    font-weight: 100;
+    font-size: 1rem;
+    font-weight: 200;
     padding:15px 5px 30px;
 }
 
@@ -453,9 +448,21 @@ section.infoWidget.projectCard .screenshotsContainer .bothVertical{
 /*================ START TABLET/ LOW DPI DESKTOP VIEW=================== */
 
 @media screen and (min-width: 600px){
-    /* *{
-        border:1px solid red;
-    } */
+
+    /* global styling */
+
+    html{
+        height: 100%;
+        overflow: hidden;
+    }
+
+    body{
+        height: 100%;
+    }
+
+    /* global Styling */
+
+
     .wrapper{
         max-width: 700px;
         margin:0 auto;
@@ -481,8 +488,6 @@ section.infoWidget.projectCard .screenshotsContainer .bothVertical{
         margin-bottom:40px;
     }
 
-
-
     .infoWidget > .infoSection {
         max-width: 530px;
         margin: 0 auto;
@@ -498,7 +503,7 @@ section.infoWidget.projectCard .screenshotsContainer .bothVertical{
     }
     .infoWidget > .infoSection > .personDetails > .description {
         font-size: 1.0rem;
-        font-weight: 100;
+        font-weight: 200;
         line-height: 23px;
     }
     .infoWidget > .infoSection > .personDetails > .logosContainer > img {
