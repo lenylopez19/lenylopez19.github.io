@@ -146,6 +146,7 @@ function getDisplayedImgId(){
 }
 
 async function createProjectModal(element){
+    lockPage();
     const projectId = seekProjectId(element);
     const {projectName,projectIcon,images} = await getProjectFromId(parseInt(projectId));
     const modalWindow = createModal(projectName,projectIcon);
@@ -163,7 +164,6 @@ async function createProjectModal(element){
        if (i===0)dotElement.classList.add('circleSelected')
         imageDots.append(dotElement);
     }
-    lockPage();
     modalWindow.style.top = window.scrollY + "px";
     const pictureContainer = modalWindow.querySelector('.pictureContainer');
     pictureContainer.style.backgroundImage = "url("+images[0]+")";

@@ -6,10 +6,20 @@
     text-decoration: none;
 }
 
+html{
+    height: -webkit-fill-available;
+    min-height: 100%;
+    overflow: hidden;
+}
+
 body{
    color: white;
    font-family: sans-serif;
     background: #000000;
+    height: 100vh;
+    height: -webkit-fill-available;
+    overflow: auto;
+    touch-action: pan-y;
 }
 a{
     font-weight: 100;
@@ -24,16 +34,16 @@ img{
 .hoverable{
     transition: transform 0.3s ease;
     cursor: pointer;
+    transform:  translate3d(0,0,0);
 }
 .hoverable:hover{
     transform: scale(1.1);
-
 }
 
 .glassCard{
     background: rgba(40, 40, 40, 0.45);
     border: 1px solid rgba(113, 113, 113, 0.38);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
     border-radius: 15px;
 }
@@ -45,7 +55,7 @@ img{
     z-index: 1000;
     width: 100%;
     top: 0;
-    height: 100%;
+    height: 100svh;
     display: flex;
     flex-direction: column-reverse;
 }
@@ -68,9 +78,6 @@ img{
     color: white;
 }
 
-.next{
-
-}
 .prev{
     margin-left: auto;
 }
@@ -97,9 +104,6 @@ img{
 }
 
 .pictureContainer{
-
-    /* background-image: url('../assets/figmaDesigns/clothingStore1.png'); */
-
     background-position: cover;
     background-size: contain;
     background-position: center;
@@ -137,8 +141,8 @@ img{
     position: relative;
     background: rgba(40, 40, 40, 0.45);
     border: 1px solid rgba(113, 113, 113, 0.38);
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(38px);
+    /* box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25); */
+    backdrop-filter: blur(38px); 
     -webkit-backdrop-filter: blur(38px);
     border-radius: 15px;
 }
@@ -146,6 +150,7 @@ img{
 .infoWidget::after{
     content: '';
     background-color: #673AB7;
+    background: linear-gradient(#673AB7 , #3988b6);
     width: 200px;
     height: 200px;
     position: absolute;
@@ -157,13 +162,14 @@ img{
 .infoWidget::before{
     content: '';
     background-color: #673AB7;
+    background: linear-gradient( #3988b6, #673AB7);
     width: 300px;
     height: 150px;
     position: absolute;
     bottom:-20px;
     left: -40px;
     z-index: -1;
-    filter: blur(90px);
+    filter: blur(50px);
 }
 
 .infoWidget > .infoSection{
@@ -286,8 +292,8 @@ img{
     padding: 15px;
     background: rgba(40, 40, 40, 0.45);
     border: 1px solid rgba(113, 113, 113, 0.38);
-    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(15px);
+    /* box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25); */
+    /* backdrop-filter: blur(15px); */
     border-radius: 15px;
 }
 .item > img{
@@ -335,8 +341,8 @@ article.roadMap > section.sectionTitleContainer{
     flex-direction: column;
     background: rgba(40, 40, 40, 0.45);
     border: 1px solid rgba(113, 113, 113, 0.38);
-    box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(15px);
+    /* box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25); */
+    /* backdrop-filter: blur(15px); */
     border-radius: 15px;
     margin-bottom:50px;
 }
@@ -368,10 +374,11 @@ article.roadMap > section.sectionTitleContainer{
     font-size: 1.4rem;
 }
 .projectCard .subSectionTitleContainer .projectButton{
-    border:2px solid #673AB7;
     padding:10px;
     border-radius: 10px;
     color:white;    
+    background: linear-gradient(45deg, #673ab7 , #8054cd );
+    /* background: linear-gradient(45deg, #5b3c91 , #9a3788 ); */
 }
 
 .projectCard > .subSectionTitleContainer .projectButton > img{
