@@ -130,13 +130,8 @@ function setActiveDot(imgId){
 }
 
 function deactiveDot(){
-    const dotController = document.querySelectorAll(".circle");
-    dotController.forEach(circle => {
-        if(circle.classList.contains("circleSelected")){
-            circle.classList.remove('circleSelected');
-            return;
-        }     
-    });
+    const selectedDot = document.querySelector(".circleSelected");
+    selectedDot.classList.remove('circleSelected');
 }
 
 function getDisplayedImgId(){

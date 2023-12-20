@@ -461,7 +461,7 @@ section.infoWidget.projectCard .screenshotsContainer .bothVertical{
         margin:0 auto;
     }
     .infoWidget{
-        padding: 55px 30px 37px;
+        padding: 30px 30px 37px;
     }
     .infoWidget::before{
         width: 407px;
@@ -476,6 +476,13 @@ section.infoWidget.projectCard .screenshotsContainer .bothVertical{
         filter: blur(90px);
         
     }
+
+    .infoWidget > .subSectionTitleContainer{
+        margin-bottom:40px;
+    }
+
+
+
     .infoWidget > .infoSection {
         max-width: 530px;
         margin: 0 auto;
