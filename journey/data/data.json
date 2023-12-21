@@ -74,9 +74,11 @@
             "projectName":"Workit",
             "projectIcon":"assets/logos/workit.png",
             "images":[
-                "assets/workit/workit1.png",
+                "assets/workit/workit1.jpg",
                 "assets/workit/workit2.png",
-                "assets/workit/workit3.png"
+                "assets/workit/workit3.png",
+                "assets/workit/workit4.png",
+                "assets/workit/workit5.png"
             ]
         },   
         {

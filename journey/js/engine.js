@@ -99,28 +99,24 @@ async function displayImgWithId(imgId,projectId){
  
 }
 
-async function getMaxProjectImages(projectId){
+async function getProjectImagesNumber(projectId){
     const {images} = await getProjectFromId(projectId);
     return images.length;
 }
 
 async function nextImg(projectId){
-    const numberOfImages = await getMaxProjectImages(projectId);
+    const numberOfImages = await getProjectImagesNumber(projectId);
     const actualImgId = getDisplayedImgId();
-    if (actualImgId < numberOfImages){
-        const imgToDisplay = actualImgId + 1;
-        displayImgWithId(imgToDisplay,projectId);
-        setActiveDot(imgToDisplay);
-    }
+    const imgToDisplay = (actualImgId < numberOfImages)? actualImgId + 1: 1;
+    displayImgWithId(imgToDisplay,projectId);
+    setActiveDot(imgToDisplay);
 }
 
-function prevImg(projectId){
+async function prevImg(projectId){
     const actualImgId = getDisplayedImgId();
-    if (actualImgId > 1){
-        const imgToDisplay = actualImgId - 1;
-        displayImgWithId(imgToDisplay,projectId);
-        setActiveDot(imgToDisplay);
-    }
+    const imgToDisplay = (actualImgId>1)?actualImgId-1:await getProjectImagesNumber(projectId)
+    displayImgWithId(imgToDisplay,projectId);
+    setActiveDot(imgToDisplay);
 }
 
 function setActiveDot(imgId){
