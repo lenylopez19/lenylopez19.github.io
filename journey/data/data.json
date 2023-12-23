@@ -5,6 +5,14 @@
             "projectName":"Ui designs",
             "projectIcon":"assets/icons/figma.png",
             "images":[
+                "assets/figmaDesigns/expense1.jpg",
+                "assets/figmaDesigns/expense2.jpg",
+                "assets/figmaDesigns/expense3.jpg",
+                "assets/figmaDesigns/expense4.jpg",
+                "assets/figmaDesigns/clientsTrack1.png",
+                "assets/figmaDesigns/clientsTrack2.png",
+                "assets/figmaDesigns/clientsTrack3.png",
+                "assets/figmaDesigns/clientsTrack4.png",
                 "assets/figmaDesigns/pcStore1.png",
                 "assets/figmaDesigns/pcStore2.png",
                 "assets/figmaDesigns/pcStore3.png",
@@ -13,11 +21,7 @@
                 "assets/figmaDesigns/clothingStore1.png",
                 "assets/figmaDesigns/clothingStore2.png",
                 "assets/figmaDesigns/clothingStore3.png",
-                "assets/figmaDesigns/clothingStore4.png",
-                "assets/figmaDesigns/clientsTrack1.png",
-                "assets/figmaDesigns/clientsTrack2.png",
-                "assets/figmaDesigns/clientsTrack3.png",
-                "assets/figmaDesigns/clientsTrack4.png"
+                "assets/figmaDesigns/clothingStore4.png"
             ]
         },
         {
