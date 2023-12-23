@@ -297,6 +297,7 @@ img{
    margin-left: 10px;
 
 }
+
 /* END - SKILLS */
 .item{
     padding-left: 20px;
@@ -306,10 +307,13 @@ img{
     display: flex;
     align-items: center;
     padding: 15px;
-    background: rgba(40, 40, 40, 0.45);
-    border: 1px solid rgba(113, 113, 113, 0.38);
     border-radius: 15px;
 }
+.projectCard .item{
+    background: rgba(40, 40, 40, 0.45);
+    border: 1px solid rgba(113, 113, 113, 0.38);
+}
+
 .item > img{
     width: 35px;
 }
@@ -358,7 +362,10 @@ article.roadMap > section.sectionTitleContainer{
     border-radius: 15px;
     margin-bottom:50px;
 }
-
+.itemMaster > .item{
+    background: none;
+    border:none;
+}
 .subSectionTitleContainer{
     display: flex;
     align-items: center;
