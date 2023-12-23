@@ -186,5 +186,9 @@ const clickableImg = document.querySelectorAll(".projectImg");
 clickableImg.forEach((element) => {
     element.addEventListener("click",() => createProjectModal(element));
 });
+const seeButtons = document.querySelectorAll(".showProjectButton");
+seeButtons.forEach((element) => {
+    element.addEventListener("click",() => createProjectModal(element));
+})
 
 
