@@ -3,6 +3,7 @@
     margin: 0;
     padding:0;
     font-family: -apple-system, inter;
+    border: none;
 }
 
 @font-face {
@@ -12,14 +13,12 @@
 
 html{
     /* background: var(--main-backgroundGradient); */
-    height: 100svh;
-    width: 100%;
+    /* height: 100svh; */
 }
 body{
-    height: 100svh;
+    /* height: 100svh; */
     /* background: var(--main-backgroundGradient); */
     background-color:var(--main-ligthBackground);
-    width: 100%;
     color: var(--main-textColor-black);
 }
 
@@ -33,7 +32,7 @@ body{
     /* Font sizes */
     --main-windowTitle-fontsize: 40px;
     --main-windowTitle-fontWeight: 900;
-    --main-textColor-black: #222121;
+    --main-textColor-black: #4d4d4d;
     --main-windowTitle-color:white;
     --main-menuBarItem-fontSize: 14px;
     --main-menuBarItem-fontWeigth: 700;
@@ -47,8 +46,20 @@ body{
 
     --main-statusBarColor: white;
     --main-statusBarTextColor: #2a2a2a;
-}  
 
+
+    --main-categoryDetailsFontSize: 24px;
+    --main-categoryDetailsFontWeight: 600;
+    --main-categoryDetailsPaddingRight:40px;
+    --main-expenseColor:#D75948;
+
+    --main-btnFontSize:18px;
+    --main-btnFontWeight:700;
+
+
+    --main-categoryTitleFontSize:30px;
+    --main-categoryTitleFontWeight:700;
+}  
 
 /* end vars */
 
@@ -74,12 +85,13 @@ body{
     background: var(--main-backgroundGradient);
 }
 .content{
-    padding-top:40px;
+    padding-top:85px;
+    padding-bottom:65px;
     background-color: var(--main-ligthBackground);
 }
 .appMenu{
     display: flex;
-    position:sticky;
+    position:fixed;
     bottom: 0;
     min-height: 65px;
     width: 100%;
@@ -149,7 +161,6 @@ body{
 }
 
 .userDetails .userProfilePicture{
-    /* border:1px solid red; */
     border-radius: 50%;
     max-height: 35px;
     max-width: 35px;
@@ -170,6 +181,131 @@ body{
     padding-bottom:45px;
     padding-top:20px;
 }
+
+.categoryDetails{
+    
+}
+.categoryDetails .categoryDetailsTopBar{
+    display: flex;
+}
+.categoryDetails .categoryDetailsTopBar .categoryTitle{
+    margin-right: auto;
+    padding: 5px 10px;
+    padding-right: var(--main-categoryDetailsPaddingRight);
+    font-weight:var(--main-categoryDetailsFontWeight);
+    font-size: var(--main-categoryDetailsFontSize);
+} 
+
+.btn{
+    display: flex;
+    align-items: center;
+    flex-basis: 80px;
+    justify-content: space-between;
+    padding: 0 10px;
+    border-radius: 10px;
+    color:white;
+    cursor: pointer;
+}
+.btn > img{
+    width: 25px;
+    object-fit: cover;
+}
+.btn.edit{
+    background-color: #DBA566;
+    border-bottom: 4px solid #9B7141;
+    font-size: var(--main-btnFontSize);
+    font-weight: var(--main-btnFontWeight);
+}
+
+.categoryDetailsContent{
+    padding:20px 10px;
+    border-bottom: 1px solid #E3E3E3;
+}
+
+.categoryDetailsContent .categoryTitleContainer{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.categoryDetailsContent .categoryTitleContainer .categoryTitle{
+    margin-right: auto;
+    font-size: var(--main-categoryTitleFontSize);
+    font-weight: var(--main-categoryTitleFontWeight);
+}
+
+.categoryDetailsContent .categoryTitleContainer .categoryTotalAmount{
+    color:#717171;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.categoryDetailsContent .categoryDetailsItem{
+    display: flex;
+    padding: 5px 0 0 10px;
+    align-items: center;
+}
+
+.categoryDetailsContent .categoryDetailsItemTitle{
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.categoryDetailsContent .categoryDetailsItemDate{
+    font-size: 12px;
+    padding: 0 5px;
+    font-weight: 400;
+
+}
+
+.categoryDetailsContent .categoryDetailsItemAmount{
+    margin-left: auto;
+    color:#717171;
+    font-weight: 800;
+    min-width: fit-content;
+    padding-left: 10px;
+}
+
+.expenseColor{
+    background-color: var(--main-expenseColor);
+    color:white;
+}
+
+
+.progressBarContainer{
+    margin-top:20px;
+}
+
+.progressBarTitle{
+    font-size: 12px;
+    justify-content: start;
+    align-items: center;
+    display: flex;
+    gap:5px;
+    margin-bottom: 5px;
+}
+.progressBarTitle > span{
+    background-color: #c9c9c9;
+    border-radius: 15px;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    
+}
+.progressBar{
+    border:1px solid #c9c9c9;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.progressBar .innerBar{
+    width: 60%;
+    height: 100%;
+
+}
+
 
 /* Widgets */
 
@@ -244,16 +380,4 @@ body{
     justify-content:center;
     transform: translateY(40px);
     gap: 20px;
-}
-
-.fakeWidget{
-    border:1px solid red;
-    flex-basis: 200px;
-    height: 200px;
-}
-
-.fakeContent{
-    /* border:1px solid red; */
-    height: 300px;
-    margin-top:20px;
 }
