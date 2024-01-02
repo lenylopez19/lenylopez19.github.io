@@ -19,11 +19,27 @@
                     <img class="userProfilePicture" src="assets/profilePicture/defaultPicture.jpg" alt="User picture">
                 </section>
 
-                <h1 class="mainTitle">Summary</h1>
-                
+                <h1 class="mainTitle">Month</h1>
+                <div class="dropDown">
+                    <img src="assets/icons/calendarNormal.png" alt="">
+                    <div class="defaultItem">December</div>
+                    <div class="arrow"></div>
+                </div>
                 <div class="widgetContainer">
-                    
-                    <div class="summaryWidget">
+            
+                    <div class="totalWidget totalIncomeWidget">
+                        <img src="assets/icons/income.png" alt="">
+                        <h3 class="widgetTitle">Income</h3>
+                        <div class="widgetAmount">RD$ 42,400</div>
+                    </div>
+
+                    <div class="totalWidget totalExpenseWidget">
+                        <img src="assets/icons/expense.png" alt="">
+                        <h3 class="widgetTitle">Expenses</h3>
+                        <div class="widgetAmount">RD$ 42,400</div>
+                    </div>
+
+                    <!-- <div class="summaryWidget">
                         <div class="widgetIconSection">
                             <img class="widgetIcon" src="assets/icons/calendarMonth.png" alt="">
                         </div>
@@ -50,14 +66,25 @@
                                 <div class="dataDisplay expenseSection">14500</div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
+
+
+
+
+
                 </div>
             </div>
         </header>
         <section class="content">
 
             <div class="contentWrapper">
+
+                <h2 class="buttonTitle">View</h2>
+                <div class="categoryButtonContainer">
+                    <button class="btn expenseColor categoryButton"><img src="assets/icons/expense.png" alt="">Expenses</button>
+                    <button class="btn incomeColor categoryButton"><img src="assets/icons/income.png" alt="">Incomes</button>
+                </div>
 
                 <article class="categoryDetails">
 
