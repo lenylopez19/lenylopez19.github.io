@@ -87,7 +87,7 @@ body{
     background: var(--main-backgroundGradient);
 }
 .content{
-    padding-top:65px;
+    padding-top:55px;
     padding-bottom:65px;
     background-color: var(--main-ligthBackground);
 }
@@ -192,6 +192,7 @@ body{
     gap:10px;
     padding:20px;
     padding-right: 30px;
+    cursor: pointer;
 }
 
 .dropDown > img{
@@ -496,7 +497,7 @@ body{
 .widgetContainer{
     display: flex;
     justify-content:center;
-    transform: translateY(40px);
+    transform: translateY(20px);
     gap: 20px;
-    padding-top:20px;
+    padding-top:30px;
 }

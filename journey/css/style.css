@@ -406,6 +406,9 @@ article.roadMap > section.sectionTitleContainer{
     font-weight: 300;
     font-size: 1.4rem;
 }
+.projectCard .subSectionTitleContainer .projectName > a{
+    color: white;
+}
 .projectCard .subSectionTitleContainer .projectButton{
     padding:10px;
     border-radius: 10px;
