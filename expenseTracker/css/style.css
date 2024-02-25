@@ -3,7 +3,7 @@
     margin: 0;
     padding:0;
     font-family: -apple-system, inter;
-    border: none;
+    /* border: 1px solid red; */
 }
 
 @font-face {
@@ -21,11 +21,15 @@ body{
     background-color:var(--main-ligthBackground);
     color: var(--main-textColor-black);
 }
+button{
+    border:none
+}
 
 /* vars */
 
 :root{
     --main-backgroundGradient: linear-gradient(99.67deg, #43C3DF 0.33%, #B61CCF 99.57%);
+    /* --main-backgroundGradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%); */
     --main-ligthBackground: rgb(246, 246, 246);
     --main-darkBackground: rgb(25, 25, 25);
 
@@ -43,6 +47,9 @@ body{
     --main-widgetSubtitle-fontWeight:900;
     --main-widgetTitle-color: #9D9D9D;
     --main-widgetSubtitle-color:  #505050;
+    --main-widgetText-color: white;
+    --main-widgetButton-backgroundColor:#ffffff35;
+    --main-widgetButton-dropShadow:0px 5px 0px rgba(0, 0, 0, 0.40);
 
     --main-statusBarColor: white;
     --main-statusBarTextColor: #2a2a2a;
@@ -53,7 +60,14 @@ body{
     --main-categoryDetailsPaddingRight:40px;
 
     --main-expenseColor:#D75948;
+    --main-expenseColorShadow:#a24235;
+    --main-expenseColorLight:#F5D1D1;
     --main-incomeColor:#7ABD50;
+    --main-incomeColorShadow:#598b3a;
+    --main-incomeColorLight:#DFF5D1;
+    --main-saveColor:#439DDF;
+    --main-saveColorShadow:#3174A5;
+
 
     --main-btnFontSize:18px;
     --main-btnFontWeight:700;
@@ -69,7 +83,7 @@ body{
 /* START App Structure */
 
 .contentWrapper{
-    max-width: 95%;
+    max-width: 530px;
     margin: 0 auto;
     /* border:1px solid lightcoral; */
 }
@@ -87,7 +101,7 @@ body{
     background: var(--main-backgroundGradient);
 }
 .content{
-    padding-top:55px;
+    padding: 20px;
     padding-bottom:65px;
     background-color: var(--main-ligthBackground);
 }
@@ -177,7 +191,7 @@ body{
     font-size: var(--main-windowTitle-fontsize);
     font-weight: var(--main-windowTitle-fontWeight);
     color: var(--main-windowTitle-color);
-    padding:20px 0;
+    padding:20px;
 }
 
 .dropDown{
@@ -220,7 +234,7 @@ body{
 .categoryDetails .categoryDetailsTopBar{
     display: flex;
 }
-.categoryDetails .categoryDetailsTopBar .categoryTitle{
+.categoryTitle{
     margin-right: auto;
     padding: 5px 10px;
     padding-right: var(--main-categoryDetailsPaddingRight);
@@ -368,6 +382,151 @@ body{
 
 }
 
+.addIncomeExpenseTitleContainer{
+    /* border:1px solid red; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding:0 20px;
+}
+
+.addIncomeExpenseTitleContainer > img{
+    width: 40px;
+
+}
+.addIncomeExpenseTitle{
+    font-size: var(--main-categoryDetailsFontSize);
+    font-weight: var(--main-categoryDetailsFontWeight);
+}
+
+.expenseIncomeForm{
+    /* border:1px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+.defaultForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+
+.expenseIncomeLabel{
+    font-size: 16px;
+    font-weight:bolder;
+}
+.defaultLabel{
+    font-size: 16px;
+    font-weight:bolder;
+}
+.expenseIncomeInput{
+    border:1px solid gray;
+    border-radius: 0;
+    padding: 7px;
+    font-size: 14px;
+}
+.defaultInput{
+    border:1px solid gray;
+    border-radius: 0;
+    padding: 7px;
+    font-size: 14px;
+}
+
+.inputDate{
+    width: 100%;
+    background-color: white;
+    color:gray;
+}
+
+.expenseIncomeButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--main-expenseColor);
+    border-bottom: 5px solid var(--main-expenseColorShadow);
+    color:white;
+    font-size: 14px;
+    font-weight: bold;
+    gap:10px;
+    padding:5px;
+    margin-top:30px;
+}
+.expenseIncomeButton>img{
+    width: 40px;
+}
+
+.manageCategoryWidget{
+    display: flex;
+    flex-direction: column;
+    padding-bottom:30px;
+}
+.widgetButtonMain.widgetButton{
+    font-size: var(--main-categoryDetailsFontSize);
+    padding:20px;
+}
+
+
+/* START Forms style */
+.formTitleContainer{
+    border:2px dashed rgb(227, 227, 227);
+    display: flex;
+    align-items: center;
+    padding:12px;
+    gap:20px;
+}
+.subtext{
+    font-size: 20px;
+    font-weight: 600;
+}
+.formTitleContainer > img{
+    width: 40px;
+}
+.formTitle{
+    font-size: var(--main-categoryDetailsFontSize);
+    font-weight: var(--main-categoryDetailsFontWeight);
+}
+
+.categoryButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--main-saveColor);
+    border-bottom: 5px solid var(--main-saveColorShadow);
+    color:white;
+    font-size: 14px;
+    font-weight: bold;
+    gap:10px;
+    padding:5px;
+    max-width: 55px;
+    margin-left:auto;
+}
+
+.iconBox{
+    /* border:1px solid red; */
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(55px, 1fr) );
+    gap:15px;
+
+}
+.iconBox > img{
+    width: 70px;
+    padding:10px;
+}
+.iconBox > img.selected{
+    border:2px solid gray;
+    border-radius: 5px;
+
+}
+
+/* END Forms style */
+
 
 /* Widgets */
 
@@ -492,6 +651,28 @@ body{
     }
 
     /* end income resume widget */
+
+    /* create category widget */
+    .createNewCategoryWidget{
+        /* border:1px solid red; */
+        text-align: center;
+        padding:40px 0 20px;
+        color:var(--main-widgetText-color);
+        
+    }
+    
+    .widgetButton{
+        border-radius: 15px;
+        margin:12px;
+        padding:10px 30px;
+        background-color: var(--main-widgetButton-backgroundColor);
+        color:white;
+        box-shadow: var(--main-widgetButton-dropShadow);
+        font-size: 14px;
+        font-weight: var(--main-btnFontWeight);
+
+    }
+
 /* end widgets */
 
 .widgetContainer{

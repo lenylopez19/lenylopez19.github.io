@@ -106,6 +106,33 @@
                 "assets/elca/elca14.png",
                 "assets/elca/elca15.png" 
             ]
+        },
+        {
+            "id":7,
+            "projectName":"Nucleos Co-op",
+            "projectIcon":"assets/icons/nucleus.png",
+            "images":[
+                "assets/nucleusCo-op/nucleus1.webp",
+                "assets/nucleusCo-op/nucleus2.webp",
+                "assets/nucleusCo-op/project0.webp",
+                "assets/nucleusCo-op/project1.webp",
+                "assets/nucleusCo-op/project2.webp",
+                "assets/nucleusCo-op/project3.webp",
+                "assets/nucleusCo-op/project4.webp",
+                "assets/nucleusCo-op/project5.webp",
+                "assets/nucleusCo-op/project6.webp" 
+            ]
+        },
+        {
+            "id":8,
+            "projectName":"Gestor de servicio",
+            "projectIcon":"assets/logos/gestorDeServicio.webp",
+            "images":[
+                "assets/gestorDeServicio/screen0.webp",
+                "assets/gestorDeServicio/screen1.webp",
+                "assets/gestorDeServicio/screen2.webp",
+                "assets/gestorDeServicio/screen3.webp"
+            ]
         }
 
     ]
