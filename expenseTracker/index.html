@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="white" />
+    <meta name="theme-color" content="black" />
     <title>ExpenseTracker</title>
     <link rel="stylesheet" href="css/style.css">
+    <script defer type="module" src="js/engine.js"></script>
 </head>
 <body>
     <main class="appWrapper">
@@ -19,26 +20,32 @@
                     <img class="userProfilePicture" src="assets/profilePicture/defaultPicture.jpg" alt="User picture">
                 </section>
 
-                <h1 class="mainTitle">Manage<br>Categories</h1>
+                <h1 class="mainTitle">Month</h1>
+                
+                <div class="dropDown">
+                    <img src="assets/icons/calendarNormal.png" alt="">
+                    <div class="defaultItem">December</div>
+                    <div class="arrow"></div>
+                </div>
 
                 <!-- <div class="dropDown">
                     <img src="assets/categoriesIcons/uberEats.png" alt="">
                     <div class="defaultItem">Uber Eats</div>
                     <div class="arrow"></div>
-                </div> -->
+                </div>
                 
-                <!-- <div class="createNewCategoryWidget">
+                <div class="createNewCategoryWidget">
                     <h4 class="widgetSubtitle">want to be more specific?</h4>
                     <button class="createNewCategory widgetButton">+ Create new category</button>
                 </div> -->
 
-                <div class="manageCategoryWidget">
+                <!-- <div class="manageCategoryWidget">
                     
                     <button class="widgetButtonMain widgetButton">📝 Create new category</button>
                     <button class="widgetButtonMain widgetButton">✍️ Edit Existing category</button>
-                </div>
+                </div> -->
 
-                <!-- <div class="widgetContainer">
+                <div class="widgetContainer">
             
                     <div class="totalWidget totalIncomeWidget">
                         <img src="assets/icons/income.png" alt="">
@@ -50,7 +57,7 @@
                         <img src="assets/icons/expense.png" alt="">
                         <h3 class="widgetTitle">Expenses</h3>
                         <div class="widgetAmount">RD$ 42,400</div>
-                    </div> -->
+                    </div>
 
                     <!-- <div class="summaryWidget">
                         <div class="widgetIconSection">
@@ -86,7 +93,8 @@
         </header>
         <section class="content">
             <div class="contentWrapper">
-                <span class="subtext">Preview</span>
+
+                <!-- <span class="subtext">Preview</span>
                 <div class="formTitleContainer">
                     <img src="assets/categoriesIcons/uberEats.png" alt="">
                     <span class="formTitle">
@@ -109,7 +117,7 @@
                         <img src="assets/categoriesIcons/uberEats.png" alt="">
                         
                     </div>
-                </form>
+                </form> -->
 
                 <!-- <div class="addIncomeExpenseTitleContainer">
                     <img src="assets/categoriesIcons/uberEats.png" alt="">
@@ -128,7 +136,7 @@
                 </form> -->
 
 
-                <!-- <h2 class="buttonTitle">View</h2>
+                <h2 class="buttonTitle">View</h2>
                 <div class="categoryButtonContainer">
                     <button class="btn expenseColor categoryButton"><img src="assets/icons/expense.png" alt="">Expenses</button>
                     <button class="btn incomeColor categoryButton"><img src="assets/icons/income.png" alt="">Incomes</button>
@@ -195,7 +203,7 @@
                         </div>
                     </section>
 
-                </article> -->
+                </article>
 
             </div>
         </section>

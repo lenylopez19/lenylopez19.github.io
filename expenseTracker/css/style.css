@@ -28,7 +28,8 @@ button{
 /* vars */
 
 :root{
-    --main-backgroundGradient: linear-gradient(99.67deg, #43C3DF 0.33%, #B61CCF 99.57%);
+    --main-backgroundGradient: linear-gradient(120deg, #43C3DF 0.33%, #B61CCF 99.57%);
+    /* --main-backgroundGradient: linear-gradient(180deg, #43C3DF 0.33%, #B61CCF 99.57%); */
     /* --main-backgroundGradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%); */
     --main-ligthBackground: rgb(246, 246, 246);
     --main-darkBackground: rgb(25, 25, 25);
@@ -83,13 +84,11 @@ button{
 /* START App Structure */
 
 .contentWrapper{
-    max-width: 530px;
+    max-width: 95%;
     margin: 0 auto;
-    /* border:1px solid lightcoral; */
 }
 
 .appWrapper{
-    /* border:1px solid red; */
     height: 100%;
     display:flex;
     flex-direction: column;
@@ -172,6 +171,7 @@ button{
     padding-top:15px;
     justify-content: flex-end;
     margin-left: auto;
+    padding-right: 12px;
 }
 
 .userDetails .userProfilePicture{
@@ -320,7 +320,7 @@ button{
 }
 
 .buttonTitle{
-   margin-bottom:15px;
+   margin:20px 0 15px;
 }
 
 .categoryButton{
@@ -442,13 +442,19 @@ button{
     color:gray;
 }
 
+.addIncome{
+    background-color: var(--main-incomeColor);
+    border-bottom: 5px solid var(--main-incomeColorShadow);
+}
+.addExpense{
+    background-color: var(--main-expenseColor);
+    border-bottom: 5px solid var(--main-expenseColorShadow);
+}
 .expenseIncomeButton{
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    background-color: var(--main-expenseColor);
-    border-bottom: 5px solid var(--main-expenseColorShadow);
     color:white;
     font-size: 14px;
     font-weight: bold;
@@ -491,7 +497,7 @@ button{
     font-weight: var(--main-categoryDetailsFontWeight);
 }
 
-.categoryButton{
+.saveButton{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -681,4 +687,12 @@ button{
     transform: translateY(20px);
     gap: 20px;
     padding-top:30px;
+}
+
+
+
+@media (min-width:530px){
+    .contentWrapper{
+        max-width: 530px;
+    }
 }
