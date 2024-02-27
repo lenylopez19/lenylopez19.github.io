@@ -52,6 +52,11 @@ export function ShowAddExpense(){
     newCategoryWidget.append(generateElement({tag:'h4',textContent:'Want to be more specific?'}))
     const createNewCategoryBtn = generateElement({tag:'button',textContent:'+ Create new Category', classes:['createNewCategory','widgetButton']})
     //add event listener to the createNewCategorybtn
+    createNewCategoryBtn.addEventListener("click",() =>{
+        const app = document.querySelector('main.appWrapper')
+        app.innerHTML=""
+        app.append(manageCategories())
+    },{once:true})
     //
     newCategoryWidget.append(createNewCategoryBtn);
     inHeader.append(dropDown,newCategoryWidget)
@@ -110,6 +115,11 @@ export function ShowAddIncome(){
     newCategoryWidget.append(generateElement({tag:'h4',textContent:'Want to be more specific?'}))
     const createNewCategoryBtn = generateElement({tag:'button',textContent:'+ Create new Category', classes:['createNewCategory','widgetButton']})
     //add event listener to the createNewCategorybtn
+    createNewCategoryBtn.addEventListener("click",() =>{
+        const app = document.querySelector('main.appWrapper')
+        app.innerHTML=""
+        app.append(manageCategories())
+    },{once:true})
     //
     newCategoryWidget.append(createNewCategoryBtn);
     inHeader.append(dropDown,newCategoryWidget)
@@ -172,55 +182,17 @@ export function manageCategories(){
     const subtext = generateElement({tag:'span',classes:['subtext'],textContent:'Preview'})
     const formTitleContainer = generateElement({tag:'div',classes:['formTitleContainer']})
     formTitleContainer.append(
-        generateElement({
-            tag:'img',
-            imgUrl:'assets/categoriesIcons/uberEats.png'
-        })
-        ,
-        generateElement({
-            tag:'span',
-            classes:['formTitle'],
-            textContent:'uber Eat'
-        })
-        ,
-        generateElement({
-            tag:'button',
-            classes:['addExpense','saveButton'],
-            textContent:'Save'
-        })
+        generateElement({tag:'img',imgUrl:'assets/categoriesIcons/uberEats.png'}),
+        generateElement({tag:'span',classes:['formTitle'],textContent:'uber Eat'}),
+        generateElement({tag:'button',classes:['addExpense','saveButton'],textContent:'Save'})
     )
     const form = generateElement({tag:'form',classes:['defaultForm']})
     form.append(
-        generateElement({
-            tag:'label',
-            classes:['defaultLabel'],
-            textContent:'Category Name'
-        })
-        ,
-        generateElement({
-            tag:'input',
-            type:'text',
-            id:'categoryName',
-            classes:['defaultInput']
-        })
-        ,
-        generateElement({
-            tag:'label',
-            classes:['defaultLabel'],
-            textContent:'Icon'
-        })
-        ,
-        generateElement({
-            tag:'input',
-            type:'text',
-            id:'categoryIcon',
-            classes:['defaultInput']
-        })
-        ,
-        generateElement({
-            tag:'div',
-            classes:['iconBox']
-        })
+        generateElement({tag:'label',classes:['defaultLabel'],textContent:'Category Name'}),
+        generateElement({tag:'input',type:'text',id:'categoryName',classes:['defaultInput']}),
+        generateElement({tag:'label',classes:['defaultLabel'],textContent:'Icon'}),
+        generateElement({tag:'input',type:'text',id:'categoryIcon',classes:['defaultInput']}),
+        generateElement({tag:'div',classes:['iconBox']})
     )
     const iconBox = form.querySelector('.iconBox')
     iconBox.append(

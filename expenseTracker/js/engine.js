@@ -5,3 +5,16 @@ const app = document.querySelector('.appWrapper')
 // app.append(manageCategories("Manage\nCategories"))
 // app.append(ShowAddExpense())
 // app.append(ShowAddIncome())
+
+
+const addExpense = document.querySelector('#addExpense')
+addExpense.addEventListener('click',() =>{
+    app.innerHTML = ""
+    app.append(ShowAddExpense())
+})
+
+const addIncome = document.querySelector('#addIncome')
+addIncome.addEventListener('click',() =>{
+    app.innerHTML = ""
+    app.append(ShowAddIncome())
+})
