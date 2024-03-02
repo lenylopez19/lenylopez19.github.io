@@ -1,4 +1,4 @@
-import { manageCategories, generateHomeScreen, ShowAddExpense, ShowAddIncome } from "./screensLayout.js";
+import { manageCategories, generateHomeScreen, ShowAddExpense, ShowAddIncome, showMonthDetail } from "./screensLayout.js";
 
 const app = document.querySelector('.appWrapper')
 // app.innerHTML = ""
@@ -6,6 +6,8 @@ const app = document.querySelector('.appWrapper')
 // app.append(ShowAddExpense())
 // app.append(ShowAddIncome())
 
+app.innerHTML="";
+app.append(showMonthDetail())
 
 const addExpense = document.querySelector('#addExpense')
 addExpense.addEventListener('click',() =>{

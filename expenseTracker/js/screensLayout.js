@@ -33,6 +33,137 @@ function getUserSection(){
     return userDetail
 }
 
+function renderExpenses(){
+    const incomesBtn = document.querySelector('#showIncomes')
+    incomesBtn.classList.add('selected')
+    const categoryDetails = generateElement({tag:'article',classes:['categoryDetails']})
+    const categoryDetailsTopBar = generateElement({tag:'section',classes:['categoryDetailsTopBar']})
+    categoryDetailsTopBar.append(
+        generateElement({tag:'h2',classes:['categoryTitle','expenseColor'],textContent:'Expenses Details'})
+    )
+    const editBtn = generateElement({tag:'button',classes:['btn','edit']})
+    editBtn.append(
+        generateElement({tag:'img',imgUrl:'assets/icons/expense.png'}),
+        generateElement({tag:'span',textContent:'Edit'})
+    )
+    categoryDetailsTopBar.append(editBtn)
+
+    const categoryDetailsContent = categoryTitle()
+    for (let i=0;i<5;i++){
+        const categoryDetailsItem = categoryItem()
+        categoryDetailsContent.append(categoryDetailsItem)
+    }
+    categoryDetails.append(categoryDetailsTopBar,categoryDetailsContent)
+
+    const renderTarget = document.querySelector('.categoryDetails')
+    renderTarget.innerHTML= ''
+    renderTarget.append(categoryDetails)
+    // return categoryDetails
+}
+
+function renderIncomes(){
+    const categoryDetails = generateElement({tag:'article',classes:['categoryDetails']})
+    const categoryDetailsTopBar = generateElement({tag:'section',classes:['categoryDetailsTopBar']})
+    categoryDetailsTopBar.append(
+        generateElement({tag:'h2',classes:['categoryTitle','incomeColor'],textContent:'Incomes Details'})
+    )
+    const editBtn = generateElement({tag:'button',classes:['btn','edit']})
+    editBtn.append(
+        generateElement({tag:'img',imgUrl:'assets/icons/income.png'}),
+        generateElement({tag:'span',textContent:'Edit'})
+    )
+    categoryDetailsTopBar.append(editBtn)
+
+    const categoryDetailsContent = categoryTitle()
+    for (let i=0;i<5;i++){
+        const categoryDetailsItem = categoryItem()
+        categoryDetailsContent.append(categoryDetailsItem)
+    }
+    categoryDetails.append(categoryDetailsTopBar,categoryDetailsContent)
+    const renderTarget = document.querySelector('.categoryDetails')
+    renderTarget.innerHTML= ''
+    renderTarget.append(categoryDetails)
+    
+}
+function categoryTitle(){
+    const categoryDetailsContent = generateElement({tag:'section',classes:['categoryDetailsContent']})
+    const categoryTitleContainer = generateElement({tag:'div',classes:['categoryTitleContainer']})
+    categoryTitleContainer.append(
+    generateElement({tag:'h3',classes:['categoryTitle'],textContent:'🪴Grass'}),
+    generateElement({tag:'span',classes:['categoryTotalAmount'],textContent:'RD$ 13,500'})
+    )
+    categoryDetailsContent.append(categoryTitleContainer)
+    return categoryDetailsContent
+}
+function categoryItem(){
+    const categoryDetailsItem = generateElement({tag:'div',classes:['categoryDetailsItem']})
+    const detailItemTitle = generateElement({tag:'h4',classes:['categoryDetailsItemTitle'],textContent:'Orquidea'})
+    const detailItemDate = generateElement({tag:'span',classes:['categoryDetailsItemDate'],textContent:'24/12/23'})
+    const detailItemAmount = generateElement({tag:'span',classes:['categoryDetailsItemAmount'],textContent:'RD$ 6500'})
+    detailItemTitle.append(detailItemDate)
+    categoryDetailsItem.append(detailItemTitle,detailItemAmount)
+    return categoryDetailsItem
+}
+
+export function showMonthDetail(){
+    const view = generateElement({tag:'main',classes:['appWrapper']})
+    const heroHeader = header('Month')
+    const inHeader = heroHeader.querySelector('.contentWrapper')
+    const dropDown = generateElement({tag:'div',classes:['dropDown']})
+    dropDown.append(
+        generateElement({tag:'img',imgUrl:'assets/icons/calendarNormal.png'}),
+        generateElement({tag:'div',classes:['defaultItem'],textContent:'December'}),
+        generateElement({tag:'div',classes:['arrow']})
+    )
+    const widgetContainer =  generateElement({tag:'div',classes:['widgetContainer']})
+    const totalIncomeWidget = generateElement({tag:'div',classes:['totalWidget','totalIncomeWidget']})
+    totalIncomeWidget.append(
+        generateElement({tag:'img',imgUrl:'assets/icons/income.png'}),  
+        generateElement({tag:'h3',classes:['widgetTitle'],textContent:'Income'}),
+        generateElement({tag:'div',classes:['widgetAmount'],textContent:'RD$\n 42,400'})
+    )
+    const totalExpenseWidget = generateElement({tag:'div',classes:['totalWidget','totalExpenseWidget']})
+    totalExpenseWidget.append(
+        generateElement({tag:'img',imgUrl:'assets/icons/expense.png'}),
+        generateElement({tag:'h3',classes:['widgetTitle'],textContent:'Expenses'}),
+        generateElement({tag:'div',classes:['widgetAmount'],textContent:'RD$\n 42,400'})
+    )
+    widgetContainer.append(totalIncomeWidget,totalExpenseWidget)
+    inHeader.append(dropDown,widgetContainer)
+    //content
+    const content = getContentLayout()
+    const inContent = content.querySelector(".contentWrapper")
+    const contentTitle = generateElement({tag:'h2',classes:['buttonTitle'],textContent:'View'})
+    const categoryButtonContainer = generateElement({tag:'div',classes:['categoryButtonContainer']})
+    categoryButtonContainer.append(
+        generateElement({id:'showExpenses',tag:'button',classes:['btn','expenseColor','categoryButton'],textContent:'Expenses'}),
+        generateElement({id:'showIncomes',tag:'button',classes:['btn','incomeColor','categoryButton'],textContent:'Incomes'})
+    )
+    const expensesBtn = categoryButtonContainer.querySelector('#showExpenses')
+    const incomesBtn = categoryButtonContainer.querySelector('#showIncomes')
+    incomesBtn.prepend(generateElement({tag:'img',imgUrl:'assets/icons/income.png'}))
+    expensesBtn.prepend(generateElement({tag:'img',imgUrl:'assets/icons/expense.png'}))
+    incomesBtn.addEventListener("click",renderIncomes)
+    expensesBtn.addEventListener("click",renderExpenses)
+    const categoryDetails = generateElement({tag:'article',classes:['categoryDetails']})
+    
+    
+    // let categoryDetailsContent
+    // for (let i=0;i<5;i++){
+    //     if (i==0){
+    //         categoryDetailsContent = categoryTitle()
+    //     } 
+    //     const categoryDetailsItem = categoryItem()
+    //     categoryDetailsContent.append(categoryDetailsItem)
+    // }
+    
+    // categoryDetails.append(categoryDetailsContent)
+    inContent.append(contentTitle,categoryButtonContainer,categoryDetails)
+    view.append(heroHeader,content)
+    // renderExpenses()
+    return view
+}
+
 
 export function ShowAddExpense(){
     const app = generateElement({tag:'main',classes:['appWrapper']})
