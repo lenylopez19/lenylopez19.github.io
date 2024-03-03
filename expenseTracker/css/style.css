@@ -173,6 +173,7 @@ button{
     justify-content: flex-end;
     margin-left: auto;
     padding-right: 12px;
+    height: 45px;
 }
 
 .userDetails .userProfilePicture{
@@ -212,6 +213,7 @@ button{
 
 .dropDown > img{
     width: 33px;
+    aspect-ratio: 1;
 }
 
 .dropDown .defaultItem { 
@@ -259,6 +261,7 @@ h3.categoryTitle{
 .btn > img{
     width: 25px;
     object-fit: cover;
+    aspect-ratio: 1;
 }
 .btn.edit{
     background-color: #DBA566;
@@ -407,7 +410,7 @@ h3.categoryTitle{
 
 .addIncomeExpenseTitleContainer > img{
     width: 40px;
-
+    aspect-ratio: 1;
 }
 .addIncomeExpenseTitle{
     font-size: var(--main-categoryDetailsFontSize);
@@ -480,7 +483,9 @@ h3.categoryTitle{
 .expenseIncomeButton>img{
     width: 40px;
 }
-
+button > img{
+    aspect-ratio: 1;
+}
 .manageCategoryWidget{
     display: flex;
     flex-direction: column;
@@ -506,6 +511,7 @@ h3.categoryTitle{
 }
 .formTitleContainer > img{
     width: 40px;
+    aspect-ratio: 1;
 }
 .formTitle{
     font-size: var(--main-categoryDetailsFontSize);
@@ -529,7 +535,6 @@ h3.categoryTitle{
 }
 
 .iconBox{
-    /* border:1px solid red; */
     padding-top: 10px;
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(55px, 1fr) );
@@ -539,6 +544,7 @@ h3.categoryTitle{
 .iconBox > img{
     width: 70px;
     padding:10px;
+    aspect-ratio: 1;
 }
 .iconBox > img.selected{
     border:2px solid gray;
@@ -645,7 +651,7 @@ h3.categoryTitle{
     .totalWidget > img{
         margin-top:-30px;
         width: 80px;
-        
+        aspect-ratio: 1;
     }
 
     .totalWidget .widgetTitle{
