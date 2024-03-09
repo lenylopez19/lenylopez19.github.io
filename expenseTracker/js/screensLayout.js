@@ -34,8 +34,12 @@ function getUserSection(){
 }
 
 function renderExpenses(){
+    if (this.classList.contains("selected")){
+        return
+    }
+    this.classList.add("selected")
     const incomesBtn = document.querySelector('#showIncomes')
-    incomesBtn.classList.add('selected')
+    incomesBtn.classList.remove('selected')
     const categoryDetails = generateElement({tag:'article',classes:['categoryDetails']})
     const categoryDetailsTopBar = generateElement({tag:'section',classes:['categoryDetailsTopBar']})
     categoryDetailsTopBar.append(
@@ -62,6 +66,12 @@ function renderExpenses(){
 }
 
 function renderIncomes(){
+    if(this.classList.contains("selected")){
+        return
+    }
+    this.classList.add("selected")
+    const expenseBtn = document.querySelector('#showExpenses')
+    expenseBtn.classList.remove('selected')
     const categoryDetails = generateElement({tag:'article',classes:['categoryDetails']})
     const categoryDetailsTopBar = generateElement({tag:'section',classes:['categoryDetailsTopBar']})
     categoryDetailsTopBar.append(
@@ -105,6 +115,12 @@ function categoryItem(){
     return categoryDetailsItem
 }
 
+function populateDropDown(){
+    const dropDown = this
+    dropDown.style.height = '500px';
+
+}
+
 export function showMonthDetail(){
     const view = generateElement({tag:'main',classes:['appWrapper']})
     const heroHeader = header('Month')
@@ -115,6 +131,9 @@ export function showMonthDetail(){
         generateElement({tag:'div',classes:['defaultItem'],textContent:'December'}),
         generateElement({tag:'div',classes:['arrow']})
     )
+        //DROP DOWN GENERATION
+    dropDown.addEventListener("click",populateDropDown)
+        //END DROP DOWN
     const widgetContainer =  generateElement({tag:'div',classes:['widgetContainer']})
     const totalIncomeWidget = generateElement({tag:'div',classes:['totalWidget','totalIncomeWidget']})
     totalIncomeWidget.append(

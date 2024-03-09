@@ -172,7 +172,6 @@ button{
     padding-top:15px;
     justify-content: flex-end;
     margin-left: auto;
-    padding-right: 12px;
     height: 45px;
 }
 
@@ -209,6 +208,7 @@ button{
     padding:20px;
     padding-right: 30px;
     cursor: pointer;
+    transition: height 0.3s ease-in-out;
 }
 
 .dropDown > img{
@@ -355,10 +355,13 @@ h3.categoryTitle{
     border:1px solid var(--main-incomeColor);
     font-weight: 400;
 }
-.expenseColor.selected,
-.incomesColor.selected{
+.expenseColor.selected{
     color:white;
     background-color: var(--main-expenseColor);
+}
+.incomeColor.selected{
+    color:white;
+    background-color: var(--main-incomeColor);
 }
 
 .incomeColor{
