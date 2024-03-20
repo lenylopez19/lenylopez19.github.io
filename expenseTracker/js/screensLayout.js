@@ -116,23 +116,113 @@ function categoryItem(){
 }
 
 function populateDropDown(){
-    const dropDown = this
-    dropDown.style.height = '500px';
 
+    const MONTHS =[
+        {
+            id: 1,
+            month:'January',
+            icon:'assets/icons/01.png'
+        },
+        {
+            id: 2,
+            month:'February',
+            icon:'assets/icons/02.png'
+        },
+        {
+            id: 3,
+            month:'March',
+            icon:'assets/icons/03.png'
+        },
+        {
+            id: 4,
+            month:'April',
+            icon:'assets/icons/04.png'
+        },
+        {
+            id: 5,
+            month:'May',
+            icon:'assets/icons/05.png'
+        },
+        {
+            id: 6,
+            month:'June',
+            icon:'assets/icons/06.png'
+        },
+        {
+            id: 7,
+            month:'July',
+            icon:'assets/icons/07.png'
+        },
+        {
+            id: 8,
+            month:'August',
+            icon:'assets/icons/08.png'
+        },
+        {
+            id: 9,
+            month:'September',
+            icon:'assets/icons/09.png'
+        },
+        {
+            id: 10,
+            month:'October',
+            icon:'assets/icons/10.png'
+        },
+        {
+            id: 11,
+            month:'November',
+            icon:'assets/icons/11.png'
+        },
+        {
+            id: 12,
+            month:'December',
+            icon:'assets/icons/12.png'
+        },
+    ]
+    function genDropDownItem(obj){ 
+        const itemContainer = generateElement({tag:"div", classes:['itemContainer']})
+        itemContainer.append(
+            generateElement({tag:'img',imgUrl:obj.icon}),
+            generateElement({tag:'div',classes:['defaultItem'],textContent: obj.month}),
+        )
+        return itemContainer
+    }
+   
+    const dropDown = this
+    dropDown.classList.add("open")
+    dropDown.style.height = '570px'
+
+    //fetch de data in question, perhaps with a callbackfunction.
+
+    for(let i = 0 ; MONTHS.length; i++){
+        dropDown.append(
+            genDropDownItem(MONTHS[i])
+        )
+
+    }
+   
+}
+
+function genDropDown(){
+    const dropDown = generateElement({tag:'div',classes:['dropDown']})
+    const selectedItem = generateElement({tag:'div',classes:['selectedItem']})
+    selectedItem.append(
+        generateElement({tag:'img',imgUrl:'assets/icons/calendarNormal.png'}),
+        generateElement({tag:'div',classes:['defaultItem'],textContent:'December'}),
+        generateElement({tag:'div',classes:['arrow']})
+    )
+    dropDown.append(selectedItem)
+    dropDown.addEventListener("click",populateDropDown)
+    return dropDown
 }
 
 export function showMonthDetail(){
     const view = generateElement({tag:'main',classes:['appWrapper']})
     const heroHeader = header('Month')
     const inHeader = heroHeader.querySelector('.contentWrapper')
-    const dropDown = generateElement({tag:'div',classes:['dropDown']})
-    dropDown.append(
-        generateElement({tag:'img',imgUrl:'assets/icons/calendarNormal.png'}),
-        generateElement({tag:'div',classes:['defaultItem'],textContent:'December'}),
-        generateElement({tag:'div',classes:['arrow']})
-    )
+    const dropDown = genDropDown()
         //DROP DOWN GENERATION
-    dropDown.addEventListener("click",populateDropDown)
+    
         //END DROP DOWN
     const widgetContainer =  generateElement({tag:'div',classes:['widgetContainer']})
     const totalIncomeWidget = generateElement({tag:'div',classes:['totalWidget','totalIncomeWidget']})

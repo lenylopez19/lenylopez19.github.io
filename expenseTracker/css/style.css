@@ -198,24 +198,45 @@ button{
 .dropDown{
     border:1px solid #ffffff;
     background-color: #ffffff35;
-    display: flex;
+    /* display: flex; */
     border-radius: 20px;
     height: 55px;
     /* margin-bottom:80px; */
     box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.40);
     align-items: center;
     gap:10px;
-    padding:20px;
-    padding-right: 30px;
+    padding:10px;
+    padding-inline-end: 30px;
     cursor: pointer;
     transition: height 0.3s ease-in-out;
+    overflow: hidden;
 }
 
-.dropDown > img{
+.dropDown > div{
+    display:flex;
+    flex-grow:1;
+    align-items: center;
+    gap:10px;
+}
+
+.dropDown img{
     width: 33px;
     aspect-ratio: 1;
 }
 
+.itemContainer > .defaultItem{ 
+ padding:10px;
+ font-size: 18px!important;
+ border-bottom:1px solid rgba(255, 255, 255, 0.4);
+ flex-grow:1;
+}
+
+.defaultItem{
+
+}
+.dropDown.open > .selectedItem{
+    margin-bottom:15px;
+}
 .dropDown .defaultItem { 
     color:white;
     font-weight: 800;
