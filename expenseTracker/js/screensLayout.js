@@ -9,7 +9,7 @@ function header(headerTitle){
     contentWrapper.append(windowTitle);
     return heroHeader
 }
-function getContentLayout(){
+function genContentLayout(){
     const content = generateElement({
         tag:'section',
         classes:['content']
@@ -33,6 +33,45 @@ function getUserSection(){
     return userDetail
 }
 
+const CategoryType = {
+    EXPENSES: 'expenses',
+    INCOMES: 'incomes'
+}
+
+function showEditsBtns(){
+    const BTNSTATE = {
+        DONE:'done'
+    }
+
+    const btnState = this.querySelector('span').textContent.toLowerCase()
+    if( btnState === BTNSTATE.DONE){
+        this.removeAttribute('style')
+        this.querySelector('span').textContent = 'Edit'
+        const allbtns = document.querySelectorAll('.editDetailItemBtn')
+        allbtns.forEach(btn => {
+            btn.style.minWidth = 0
+        });
+        return
+    }
+    const allbtns = document.querySelectorAll('.editDetailItemBtn')
+    allbtns.forEach(btn => {
+        btn.style.minWidth = "40px"
+    });
+    this.querySelector("span").textContent = "Done"
+    this.style.backgroundColor = "#66A3DB"
+    this.style.borderBottomColor = "#4A749A"
+}
+
+function genEditButton(){
+    const editBtn = generateElement({tag:'button',classes:['btn','edit']})
+    editBtn.append(
+        generateElement({tag:'img',imgUrl:'assets/icons/edit.png'}),
+        generateElement({tag:'span',textContent:'Edit'})
+    )
+    editBtn.addEventListener("click",showEditsBtns)
+    return editBtn
+}
+
 function renderExpenses(){
     if (this.classList.contains("selected")){
         return
@@ -45,19 +84,19 @@ function renderExpenses(){
     categoryDetailsTopBar.append(
         generateElement({tag:'h2',classes:['categoryTitle','expenseColor'],textContent:'Expenses Details'})
     )
-    const editBtn = generateElement({tag:'button',classes:['btn','edit']})
-    editBtn.append(
-        generateElement({tag:'img',imgUrl:'assets/icons/expense.png'}),
-        generateElement({tag:'span',textContent:'Edit'})
-    )
-    categoryDetailsTopBar.append(editBtn)
+    categoryDetailsTopBar.append(genEditButton())
 
     const categoryDetailsContent = categoryTitle()
     for (let i=0;i<5;i++){
         const categoryDetailsItem = categoryItem()
         categoryDetailsContent.append(categoryDetailsItem)
     }
-    categoryDetails.append(categoryDetailsTopBar,categoryDetailsContent)
+    const categoryDetailsContent2 = categoryTitle()
+    for (let i=0;i<5;i++){
+        const categoryDetailsItem = categoryItem()
+        categoryDetailsContent2.append(categoryDetailsItem)
+    }
+    categoryDetails.append(categoryDetailsTopBar,categoryDetailsContent,categoryDetailsContent2)
 
     const renderTarget = document.querySelector('.categoryDetails')
     renderTarget.innerHTML= ''
@@ -77,12 +116,8 @@ function renderIncomes(){
     categoryDetailsTopBar.append(
         generateElement({tag:'h2',classes:['categoryTitle','incomeColor'],textContent:'Incomes Details'})
     )
-    const editBtn = generateElement({tag:'button',classes:['btn','edit']})
-    editBtn.append(
-        generateElement({tag:'img',imgUrl:'assets/icons/income.png'}),
-        generateElement({tag:'span',textContent:'Edit'})
-    )
-    categoryDetailsTopBar.append(editBtn)
+   
+    categoryDetailsTopBar.append(genEditButton())
 
     const categoryDetailsContent = categoryTitle()
     for (let i=0;i<5;i++){
@@ -106,99 +141,127 @@ function categoryTitle(){
     return categoryDetailsContent
 }
 function categoryItem(){
+    const editBtn = generateElement({tag:"button",classes:['editDetailItemBtn'],textContent:'Edit'})
     const categoryDetailsItem = generateElement({tag:'div',classes:['categoryDetailsItem']})
     const detailItemTitle = generateElement({tag:'h4',classes:['categoryDetailsItemTitle'],textContent:'Orquidea'})
     const detailItemDate = generateElement({tag:'span',classes:['categoryDetailsItemDate'],textContent:'24/12/23'})
     const detailItemAmount = generateElement({tag:'span',classes:['categoryDetailsItemAmount'],textContent:'RD$ 6500'})
     detailItemTitle.append(detailItemDate)
-    categoryDetailsItem.append(detailItemTitle,detailItemAmount)
+    categoryDetailsItem.append(editBtn,detailItemTitle,detailItemAmount)
     return categoryDetailsItem
 }
 
-function populateDropDown(){
+function openDropDown(dropDown){
+    dropDown.classList.add("open")
+    dropDown.style.height = '570px'
+    const arrowIcon = dropDown.querySelector(".arrow")
+    arrowIcon.style.transform = "rotate(180deg)"
+}
+function closeDropDown(dropDown){
+    dropDown.removeAttribute("style")
+    const arrowIcon = dropDown.querySelector(".arrow")
+    arrowIcon.removeAttribute("style")
+    dropDown.classList.remove("open")
+}
 
-    const MONTHS =[
-        {
-            id: 1,
-            month:'January',
-            icon:'assets/icons/01.png'
-        },
-        {
-            id: 2,
-            month:'February',
-            icon:'assets/icons/02.png'
-        },
-        {
-            id: 3,
-            month:'March',
-            icon:'assets/icons/03.png'
-        },
-        {
-            id: 4,
-            month:'April',
-            icon:'assets/icons/04.png'
-        },
-        {
-            id: 5,
-            month:'May',
-            icon:'assets/icons/05.png'
-        },
-        {
-            id: 6,
-            month:'June',
-            icon:'assets/icons/06.png'
-        },
-        {
-            id: 7,
-            month:'July',
-            icon:'assets/icons/07.png'
-        },
-        {
-            id: 8,
-            month:'August',
-            icon:'assets/icons/08.png'
-        },
-        {
-            id: 9,
-            month:'September',
-            icon:'assets/icons/09.png'
-        },
-        {
-            id: 10,
-            month:'October',
-            icon:'assets/icons/10.png'
-        },
-        {
-            id: 11,
-            month:'November',
-            icon:'assets/icons/11.png'
-        },
-        {
-            id: 12,
-            month:'December',
-            icon:'assets/icons/12.png'
-        },
-    ]
+const MONTHS =[
+    {
+        id: 1,
+        month:'January',
+        icon:'assets/icons/01.png'
+    },
+    {
+        id: 2,
+        month:'February',
+        icon:'assets/icons/02.png'
+    },
+    {
+        id: 3,
+        month:'March',
+        icon:'assets/icons/03.png'
+    },
+    {
+        id: 4,
+        month:'April',
+        icon:'assets/icons/04.png'
+    },
+    {
+        id: 5,
+        month:'May',
+        icon:'assets/icons/05.png'
+    },
+    {
+        id: 6,
+        month:'June',
+        icon:'assets/icons/06.png'
+    },
+    {
+        id: 7,
+        month:'July',
+        icon:'assets/icons/07.png'
+    },
+    {
+        id: 8,
+        month:'August',
+        icon:'assets/icons/08.png'
+    },
+    {
+        id: 9,
+        month:'September',
+        icon:'assets/icons/09.png'
+    },
+    {
+        id: 10,
+        month:'October',
+        icon:'assets/icons/10.png'
+    },
+    {
+        id: 11,
+        month:'November',
+        icon:'assets/icons/11.png'
+    },
+    {
+        id: 12,
+        month:'December',
+        icon:'assets/icons/12.png'
+    },
+]
+
+function populateDropDown(){
+    const dropDown = this
+    if (dropDown.classList.contains('open')){
+        closeDropDown(dropDown)
+        return
+    }
+
+    openDropDown(dropDown)
+    
+    const existDropDownItem = dropDown.querySelectorAll('.itemContainer').length
+    if (existDropDownItem){
+        return
+    }
+
+    function setSelectedValue(){
+        const CurrentValue = dropDown.querySelector(".selectedItem>.defaultItem")
+        const newValue = this.querySelector('.defaultItem')
+        CurrentValue.textContent = newValue.textContent
+        dropDown.dataset.month = this.dataset.month
+    }
+
     function genDropDownItem(obj){ 
-        const itemContainer = generateElement({tag:"div", classes:['itemContainer']})
+        const itemContainer = generateElement({tag:"div", classes:['itemContainer'],dataSets:{'month':obj.id}})
         itemContainer.append(
             generateElement({tag:'img',imgUrl:obj.icon}),
             generateElement({tag:'div',classes:['defaultItem'],textContent: obj.month}),
         )
+        itemContainer.addEventListener("click",setSelectedValue)
         return itemContainer
     }
    
-    const dropDown = this
-    dropDown.classList.add("open")
-    dropDown.style.height = '570px'
-
-    //fetch de data in question, perhaps with a callbackfunction.
-
-    for(let i = 0 ; MONTHS.length; i++){
+    for(let i = 0 ; i < MONTHS.length; i++){
         dropDown.append(
             genDropDownItem(MONTHS[i])
         )
-
     }
    
 }
@@ -220,9 +283,9 @@ export function showMonthDetail(){
     const view = generateElement({tag:'main',classes:['appWrapper']})
     const heroHeader = header('Month')
     const inHeader = heroHeader.querySelector('.contentWrapper')
-    const dropDown = genDropDown()
-        //DROP DOWN GENERATION
     
+        //DROP DOWN GENERATION
+    const dropDown = genDropDown()
         //END DROP DOWN
     const widgetContainer =  generateElement({tag:'div',classes:['widgetContainer']})
     const totalIncomeWidget = generateElement({tag:'div',classes:['totalWidget','totalIncomeWidget']})
@@ -240,7 +303,7 @@ export function showMonthDetail(){
     widgetContainer.append(totalIncomeWidget,totalExpenseWidget)
     inHeader.append(dropDown,widgetContainer)
     //content
-    const content = getContentLayout()
+    const content = genContentLayout()
     const inContent = content.querySelector(".contentWrapper")
     const contentTitle = generateElement({tag:'h2',classes:['buttonTitle'],textContent:'View'})
     const categoryButtonContainer = generateElement({tag:'div',classes:['categoryButtonContainer']})
@@ -302,7 +365,7 @@ export function ShowAddExpense(){
     inHeader.append(dropDown,newCategoryWidget)
 
     //content
-    const contentSection = getContentLayout()
+    const contentSection = genContentLayout()
     const inContent = contentSection.querySelector('.contentWrapper')
     const transactionTitleContainer = generateElement({
         tag:'div',
@@ -365,7 +428,7 @@ export function ShowAddIncome(){
     inHeader.append(dropDown,newCategoryWidget)
 
     //content
-    const contentSection = getContentLayout()
+    const contentSection = genContentLayout()
     const inContent = contentSection.querySelector('.contentWrapper')
     const transactionTitleContainer = generateElement({
         tag:'div',
@@ -417,7 +480,7 @@ export function manageCategories(){
     inHeader.append(manageCategoryWidget);
 
     // content
-    const contentSection = getContentLayout()
+    const contentSection = genContentLayout()
     const inContent = contentSection.querySelector('.contentWrapper')
     const subtext = generateElement({tag:'span',classes:['subtext'],textContent:'Preview'})
     const formTitleContainer = generateElement({tag:'div',classes:['formTitleContainer']})
