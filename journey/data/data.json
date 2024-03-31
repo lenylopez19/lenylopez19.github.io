@@ -133,6 +133,17 @@
                 "assets/gestorDeServicio/screen2.webp",
                 "assets/gestorDeServicio/screen3.webp"
             ]
+        },
+        {
+            "id":9,
+            "projectName":"Expense Tracker",
+            "projectIcon":"assets/logos/expenseTracker.png",
+            "images":[
+                "assets/expenseTracker/expense1.webp",
+                "assets/expenseTracker/expense2.webp",
+                "assets/expenseTracker/expense3.webp",
+                "assets/expenseTracker/expense4.webp"
+            ]
         }
 
     ]
