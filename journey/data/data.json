@@ -137,7 +137,7 @@
         {
             "id":9,
             "projectName":"Expense Tracker",
-            "projectIcon":"assets/logos/expenseTracker.png",
+            "projectIcon":"assets/icons/expenseTracker.png",
             "images":[
                 "assets/expenseTracker/expense1.webp",
                 "assets/expenseTracker/expense2.webp",
