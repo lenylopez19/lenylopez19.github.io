@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -14,8 +15,9 @@
     <meta property="og:site_name" content="PersonalJourney">
     <link rel="icon" href="assets/favicon/favico.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/engine.js" defer ></script>
+    <script src="js/engine.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="wrapper">
@@ -24,7 +26,8 @@
                     <img class="profilePicture" src="assets/profilePicture/prof1.png" alt="people picture">
                     <section class="personDetails">
                         <h1 class="name">Leny Lopez</h1>
-                        <p class="description">Estudiante de la carrera técnico superior en  desarrollo de aplicaciones Multiplataformas. @PUCMM-TEP.</p>
+                        <p class="description">Estudiante de la carrera técnico superior en desarrollo de aplicaciones
+                            Multiplataformas. @PUCMM-TEP.</p>
                         <div class="logosContainer">
                             <img src="assets/logos/pucmmLogo.png" alt="PUCMM">
                             <img src="assets/logos/tepLogo.png" alt="TEP">
@@ -33,12 +36,18 @@
                     </section>
                 </section>
                 <section class="resources">
-                    <a id = "pensum" href="https://tep.pucmm.edu.do/Documents/Programas_Tecnico_Superior/Pensum%20-%20Desarrollo%20de%20Apps.pdf" target="_blank" class="button hoverable"><img src="assets/logos/pucmmLogo.png" alt="PUCMM icon"><span>Pensum Universitario</span></a>
-                    <a id= "cv" href="assets/cv/cv.pdf" target="_blank" class="button hoverable"><img src="assets/icons/cvIcon.png" alt="CV icon"><span>Descargar CV</span></a>
+                    <a id="pensum"
+                        href="https://tep.pucmm.edu.do/Documents/Programas_Tecnico_Superior/Pensum%20-%20Desarrollo%20de%20Apps.pdf"
+                        target="_blank" class="button hoverable"><img src="assets/logos/pucmmLogo.png"
+                            alt="PUCMM icon"><span>Pensum Universitario</span></a>
+                    <a id="cv" href="assets/cv/cv.pdf" target="_blank" class="button hoverable"><img
+                            src="assets/icons/cvIcon.png" alt="CV icon"><span>Descargar CV</span></a>
                 </section>
                 <section class="social">
-                    <a href="https://do.linkedin.com/in/lenylopez" class="button hoverable" target="_blank"><img src="assets/icons/linkedin.png" alt="linkedIn Icon">LinkedIn</a>
-                    <a href="https://github.com/lenylopez19" class="button hoverable" target="_blank"><img src="assets/icons/github.png" alt="Github Icon">Github</a>
+                    <a href="https://do.linkedin.com/in/lenylopez" class="button hoverable" target="_blank"><img
+                            src="assets/icons/linkedin.png" alt="linkedIn Icon">LinkedIn</a>
+                    <a href="https://github.com/lenylopez19" class="button hoverable" target="_blank"><img
+                            src="assets/icons/github.png" alt="Github Icon">Github</a>
                 </section>
             </article>
         </div>
@@ -46,8 +55,8 @@
 
     <div class="wrapper">
 
-        <section data-projectId= "1" class="projectCard infoWidget">
-            
+        <section data-projectId="1" class="projectCard infoWidget">
+
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/icons/figma.png" alt="Figma logo">
                 <h3 class="projectName">UI designs | figma</h3>
@@ -56,24 +65,87 @@
             <section class="screenshotsContainer">
                 <img class="hoverable projectImg" src="assets/figmaDesigns/allDesigns.png" alt="website desktop view">
             </section>
-            
+
             <section class="projectDescription">
                 <p>
-                    Recopilación de diseños de interfaz de usuario, 
-                    concebidos bajo el principio fundamental del enfoque "mobile first". 
+                    Recopilación de diseños de interfaz de usuario,
+                    concebidos bajo el principio fundamental del enfoque "mobile first".
                     Elegantes en tendencias de diseño de interfaces.
                 </p>
             </section>
             <button class="showProjectButton mainButton hoverable">Ver diseños</button>
         </section>
 
+        <section data-projectId="10" class="projectCard infoWidget">
+
+            <section class="subSectionTitleContainer">
+                <img class="projectLogo" src="assets/icons/secureFileVault.png" alt="expenseTracker icon">
+                <h3 class="projectName">Secure File Vault</h3>
+                <a href="https://github.com/lenylopez19/secureFileVault" target="_blank"
+                    class="projectButton hoverable code"> Repo </a>
+
+            </section>
+
+            <section class="projectSkillsContainer">
+                <section class="item">
+                    <img src="assets/icons/reactNative.png" alt="JavaScript logo">
+                    <h3>React-Native</h3>
+                </section>
+                <section class="item">
+                    <img src="assets/icons/nodeJs.png" alt="HTML logo">
+                    <h3>Node Js</h3>
+                </section>
+                <section class="item">
+                    <img src="assets/icons/expo.png" alt="CSS logo">
+                    <h3>Expo</h3>
+                </section>
+                <section class="item">
+                    <img src="assets/icons/mysql.png" alt="PHP logo">
+                    <h3>Mysql</h3>
+                </section>
+                <section class="item">
+                    <img src="assets/icons/express.png" alt="Data base icon">
+                    <h3>Express</h3>
+                </section>
+
+
+            </section>
+
+            <section class="projectDescription">
+                <p>
+                    With secureFileVault, you can confidently store, track, and verify the history of your files,
+                    guaranteeing that they remain in their original form without any tampering.
+                    <br><br>
+                    how it works?<br><br>
+                    secureFileVault breaks down your file into key essential parts, distributing them securely across
+                    the tangle network, while storing only partial, non-usable segments in our server.
+                    When you need to access your file, secureFileVault retrieves the specific segments from the tangle
+                    network, decrypts, and reassembles your data.
+                    Each file is verified with a unique hash to ensure it remains unchanged and authentic.
+            </section>
+
+            <section class="screenshotsContainer">
+                <img class="hoverable verticalScreenShot projectImg" src="assets/screenshots/secureFileVault1.png"
+                    alt="website desktop view">
+                <img class="hoverable verticalScreenShot projectImg" src="assets/screenshots/secureFileVault3.png"
+                    alt="website mobile view">
+                <img class="hoverable verticalScreenShot projectImg" src="assets/screenshots/secureFileVault2.png"
+                    alt="website mobile view">
+
+            </section>
+
+            <button class="showProjectButton mainButton hoverable">Ver imagenes</button>
+        </section>
+
         <section data-projectId="9" class="projectCard infoWidget">
-            
+
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/icons/expenseTracker.png" alt="expenseTracker icon">
                 <h3 class="projectName">MoneyMinder</h3>
-                <a href="https://github.com/lenylopez19/lenylopez19.github.io/tree/main/expenseTracker" target="_blank" class="projectButton hoverable code"> &lt;/&gt; </a>
-                <a href="https://lenylopez19.github.io/expenseTracker/" target="_blank" class="projectButton hoverable live">Demo</a>
+                <a href="https://github.com/lenylopez19/lenylopez19.github.io/tree/main/expenseTracker" target="_blank"
+                    class="projectButton hoverable code"> &lt;/&gt; </a>
+                <a href="https://lenylopez19.github.io/expenseTracker/" target="_blank"
+                    class="projectButton hoverable live">Demo</a>
             </section>
 
             <section class="projectSkillsContainer">
@@ -98,34 +170,37 @@
                     <h3>Base de datos</h3>
                 </section>
 
-                
+
             </section>
 
             <section class="projectDescription">
                 <p>
                     [WORK IN PROGRESS]<br>
-                    cutting-edge design with a focus on user experience. Built entirely on core web technologies, 
-                    delivers a seamless mobile-first experience without relying on any frameworks, 
-                    showcasing our expertise in web fundamentals. With its modern interface, intuitive navigation, 
-                    and data rich screens empowers users to effortlessly manage their finances, 
+                    cutting-edge design with a focus on user experience. Built entirely on core web technologies,
+                    delivers a seamless mobile-first experience without relying on any frameworks,
+                    showcasing our expertise in web fundamentals. With its modern interface, intuitive navigation,
+                    and data rich screens empowers users to effortlessly manage their finances,
                     track spending, set goals, and gain insights on where their money is going.
                 </p>
             </section>
 
             <section class="screenshotsContainer">
-                <img class="hoverable horizontalScreenShot projectImg" src="assets/expenseTracker/expense1.webp" alt="website desktop view">
-                <img class="hoverable verticalScreenShot projectImg" src="assets/expenseTracker/expense4.webp" alt="website mobile view">
+                <img class="hoverable horizontalScreenShot projectImg" src="assets/expenseTracker/expense1.webp"
+                    alt="website desktop view">
+                <img class="hoverable verticalScreenShot projectImg" src="assets/expenseTracker/expense4.webp"
+                    alt="website mobile view">
             </section>
-        
+
             <button class="showProjectButton mainButton hoverable">Ver imagenes</button>
         </section>
 
-         <section data-projectId="7" class="projectCard infoWidget">
-            
+        <section data-projectId="7" class="projectCard infoWidget">
+
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/icons/nucleus.png" alt="doggyDogs icon">
                 <h3 class="projectName">Contribucion Opensource Nucleus Co-op</h3>
-                <a href="https://hub.splitscreen.me" target="_blank" class="projectButton hoverable code"> &lt;/&gt; </a>
+                <a href="https://hub.splitscreen.me" target="_blank" class="projectButton hoverable code"> &lt;/&gt;
+                </a>
                 <a href="https://nucleus-coop.github.io" target="_blank" class="projectButton hoverable live">www</a>
             </section>
 
@@ -142,27 +217,29 @@
                     <img src="assets/icons/nucleus.png" alt="CSS logo">
                     <h3>NucleusEngine</h3>
                 </section>
-                
+
             </section>
 
             <section class="projectDescription">
                 <p>
-                    Explore this fantastic open-source software that enables split-screen functionality 
-                    in PC titles that do not inherently support it. I have actively contributed to 
+                    Explore this fantastic open-source software that enables split-screen functionality
+                    in PC titles that do not inherently support it. I have actively contributed to
                     this open-source project by enhancing software compatibility.
                 </p>
             </section>
 
             <section class="screenshotsContainer">
-                <img class="hoverable horizontalScreenShot projectImg" src="assets/screenshots/nucleus1.webp" alt="website desktop view">
-                <img class="hoverable verticalScreenShot projectImg" src="assets/screenshots/nuclues2.webp" alt="website desktop view">
+                <img class="hoverable horizontalScreenShot projectImg" src="assets/screenshots/nucleus1.webp"
+                    alt="website desktop view">
+                <img class="hoverable verticalScreenShot projectImg" src="assets/screenshots/nuclues2.webp"
+                    alt="website desktop view">
             </section>
-        
+
             <button class="showProjectButton mainButton hoverable">Ver imagenes</button>
         </section>
 
         <section data-projectId="8" class="projectCard infoWidget">
-            
+
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/logos/gestorDeServicio.webp" alt="icono de gestor de servicio ">
                 <h3 class="projectName">Gestor de servicios</h3>
@@ -185,34 +262,40 @@
                     <img src="assets/icons/css.png" alt="CSS logo">
                     <h3>CSS</h3>
                 </section>
-                
+
             </section>
 
             <section class="projectDescription">
                 <p>
-                    Desarrollé un sistema de gestión de servicios para una empresa privada, 
-                    el cual resultó en un aumento significativo de la productividad en el departamento. 
-                    Esta herramienta automatizó la generación y manejo de documentos que anteriormente se completaban manualmente, 
-                    asegurando la legibilidad e integridad de la información. Además, el sistema proporciona métricas de servicios 
+                    Desarrollé un sistema de gestión de servicios para una empresa privada,
+                    el cual resultó en un aumento significativo de la productividad en el departamento.
+                    Esta herramienta automatizó la generación y manejo de documentos que anteriormente se completaban
+                    manualmente,
+                    asegurando la legibilidad e integridad de la información. Además, el sistema proporciona métricas de
+                    servicios
                     que son fundamentales para tomar decisiones estratégicas basadas en datos precisos.
                 </p>
             </section>
 
             <section class="screenshotsContainer">
-                <img class="hoverable horizontalScreenShot projectImg" src="assets/gestorDeServicio/screen0.webp" alt="website desktop view">
-                <img class="hoverable verticalScreenShot projectImg" src="assets/gestorDeServicio/screen2.webp" alt="website desktop view">
+                <img class="hoverable horizontalScreenShot projectImg" src="assets/gestorDeServicio/screen0.webp"
+                    alt="website desktop view">
+                <img class="hoverable verticalScreenShot projectImg" src="assets/gestorDeServicio/screen2.webp"
+                    alt="website desktop view">
             </section>
-        
+
             <button class="showProjectButton mainButton hoverable">Ver imagenes</button>
         </section>
 
         <section data-projectId="2" class="projectCard infoWidget">
-            
+
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/logos/doggydogs.png" alt="doggyDogs icon">
                 <h3 class="projectName">Doggydogs</h3>
-                <a href="https://github.com/lenylopez19/lenylopez19.github.io/tree/main/T2" target="_blank" class="projectButton hoverable code"> &lt;/&gt; </a>
-                <a href="https://lenylopez19.github.io/T2/" target="_blank" class="projectButton hoverable live">Demo</a>
+                <a href="https://github.com/lenylopez19/lenylopez19.github.io/tree/main/T2" target="_blank"
+                    class="projectButton hoverable code"> &lt;/&gt; </a>
+                <a href="https://lenylopez19.github.io/T2/" target="_blank"
+                    class="projectButton hoverable live">Demo</a>
             </section>
 
             <section class="projectSkillsContainer">
@@ -228,32 +311,35 @@
                     <img src="assets/icons/css.png" alt="CSS logo">
                     <h3>CSS 3</h3>
                 </section>
-                
+
             </section>
 
             <section class="projectDescription">
                 <p>
-                    Pagina web dinamica construida con javascript utilizando 
-                    programacion asyncrona para el consumo de la API, manejo de 
-                    casos de errores, en caso de que la api no devuelva una 
+                    Pagina web dinamica construida con javascript utilizando
+                    programacion asyncrona para el consumo de la API, manejo de
+                    casos de errores, en caso de que la api no devuelva una
                     imagen o exista directamente un problema de conexion.
                 </p>
             </section>
 
             <section class="screenshotsContainer">
-                <img class="hoverable horizontalScreenShot projectImg" src="assets/screenshots/doggydogsScreen1.png" alt="website desktop view">
-                <img class="hoverable verticalScreenShot projectImg" src="assets/screenshots/doggyDogsScreen2.png" alt="website mobile view">
+                <img class="hoverable horizontalScreenShot projectImg" src="assets/screenshots/doggydogsScreen1.png"
+                    alt="website desktop view">
+                <img class="hoverable verticalScreenShot projectImg" src="assets/screenshots/doggyDogsScreen2.png"
+                    alt="website mobile view">
             </section>
-        
+
             <button class="showProjectButton mainButton hoverable">Ver imagenes</button>
         </section>
 
-        <section data-projectId= "3" class="projectCard infoWidget">
-        
+        <section data-projectId="3" class="projectCard infoWidget">
+
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/logos/cloudTasks.png" alt="cloudTask icon">
                 <h3 class="projectName"><a href="https://ontask.app">onTask.app</a></h3>
-                <a href="https://github.com/lenylopez19/ZenTask-WORKINPROGRESS" target="_blank" class="projectButton hoverable code">&lt;/&gt;</a>
+                <a href="https://github.com/lenylopez19/ZenTask-WORKINPROGRESS" target="_blank"
+                    class="projectButton hoverable code">&lt;/&gt;</a>
                 <a href="https://ontask.app" target="_blank" class="projectButton hoverable live">Live</a>
             </section>
 
@@ -278,41 +364,45 @@
                     <img src="assets/icons/db.png" alt="Data base icon">
                     <h3>Base de datos</h3>
                 </section>
-               
+
             </section>
 
             <section class="projectDescription">
                 <p>
-                    Aplicacion web construida con javascript, php, mysql, enfocada 
-                    en el manejo de tareas de forma sencilla, conectada a una base 
-                    de datos para hacer permamente los cambios y accesible desde 
-                    cualquier dispositivo, posibilidad de instalar la app como 
-                    webapp en tu telefono cuenta con estilos personalizados para 
-                    aprovechar todo el espacio de la pantalla en caso de instalarse 
+                    Aplicacion web construida con javascript, php, mysql, enfocada
+                    en el manejo de tareas de forma sencilla, conectada a una base
+                    de datos para hacer permamente los cambios y accesible desde
+                    cualquier dispositivo, posibilidad de instalar la app como
+                    webapp en tu telefono cuenta con estilos personalizados para
+                    aprovechar todo el espacio de la pantalla en caso de instalarse
                     como webapp en ios, macOS y android.
                 </p>
             </section>
 
             <section class="screenshotsContainer">
-                <img class="projectImg hoverable horizontalScreenShot" src="assets/screenshots/cloudTasks1.png" alt="website desktop view">
-                <img class="projectImg hoverable verticalScreenShot" src="assets/screenshots/cloudTasks2.png" alt="website mobile view">
+                <img class="projectImg hoverable horizontalScreenShot" src="assets/screenshots/cloudTasks1.png"
+                    alt="website desktop view">
+                <img class="projectImg hoverable verticalScreenShot" src="assets/screenshots/cloudTasks2.png"
+                    alt="website mobile view">
             </section>
-            
+
 
             <button class="showProjectButton mainButton hoverable">Ver imagenes</button>
         </section>
 
-        <section data-projectId= "4" class="projectCard infoWidget">
-            
+        <section data-projectId="4" class="projectCard infoWidget">
+
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/logos/validatedForm.png" alt="validatedForm website icon">
                 <h3 class="projectName">ValidatedForm</h3>
-                <a href="https://github.com/lenylopez19/lenylopez19.github.io/tree/main/T3" target="_blank" class="projectButton hoverable code">&lt;/&gt;</a>
-                <a href="https://lenylopez19.github.io/T3/" target="_blank" class="projectButton hoverable live">Demo</a>
+                <a href="https://github.com/lenylopez19/lenylopez19.github.io/tree/main/T3" target="_blank"
+                    class="projectButton hoverable code">&lt;/&gt;</a>
+                <a href="https://lenylopez19.github.io/T3/" target="_blank"
+                    class="projectButton hoverable live">Demo</a>
             </section>
 
             <section class="projectSkillsContainer">
-    
+
                 <section class="item">
                     <img src="assets/icons/javascript.png" alt="JavaScript logo">
                     <h3>JavaScript</h3>
@@ -325,32 +415,36 @@
                     <img src="assets/icons/css.png" alt="CSS logo">
                     <h3>CSS 3</h3>
                 </section>
-               
+
             </section>
 
             <section class="projectDescription">
                 <p>
-                    Formulario con validacion dinamica en tiempo real 
+                    Formulario con validacion dinamica en tiempo real
                     creado con JavaScript, html, css, animaciones y efectos personalizados.
                 </p>
             </section>
 
             <section class="screenshotsContainer">
-                <img class="projectImg hoverable bothVertical" src="assets/screenshots/validatedForm1.png" alt="website desktop view">
-                <img class="projectImg hoverable bothVertical" src="assets/screenshots/validatedForm2.png" alt="website mobile view">
+                <img class="projectImg hoverable bothVertical" src="assets/screenshots/validatedForm1.png"
+                    alt="website desktop view">
+                <img class="projectImg hoverable bothVertical" src="assets/screenshots/validatedForm2.png"
+                    alt="website mobile view">
             </section>
-            
+
 
             <button class="showProjectButton mainButton hoverable">Ver imagenes</button>
         </section>
 
-        <section data-projectId= "5" class="projectCard infoWidget">
-            
+        <section data-projectId="5" class="projectCard infoWidget">
+
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/logos/workit.png" alt="workit page icon">
                 <h3 class="projectName">Workit</h3>
-                <a href="https://github.com/lenylopez19/Workit" target="_blank" class="projectButton hoverable code">&lt;/&gt;</a>
-                <a href="https://lenylopez19.github.io/Workit/" target="_blank" class="projectButton hoverable live">Demo</a>
+                <a href="https://github.com/lenylopez19/Workit" target="_blank"
+                    class="projectButton hoverable code">&lt;/&gt;</a>
+                <a href="https://lenylopez19.github.io/Workit/" target="_blank"
+                    class="projectButton hoverable live">Demo</a>
             </section>
 
             <section class="projectSkillsContainer">
@@ -363,7 +457,7 @@
                     <img src="assets/icons/css.png" alt="CSS logo">
                     <h3>CSS 3</h3>
                 </section>
-               
+
             </section>
 
             <section class="projectDescription">
@@ -375,17 +469,18 @@
             <section class="screenshotsContainer">
                 <img class="projectImg hoverable " src="assets/workit/workit1.jpg" alt="website desktop view">
             </section>
-            
+
 
             <button class="showProjectButton mainButton hoverable">Ver imagenes</button>
         </section>
 
-        <section data-projectId= "6" class="projectCard infoWidget">
-            
+        <section data-projectId="6" class="projectCard infoWidget">
+
             <section class="subSectionTitleContainer">
                 <img class="projectLogo" src="assets/logos/elca.png" alt="elca app icon">
                 <h3 class="projectName">Elca Comayor</h3>
-                <a href="https://github.com/lenylopez19/elca-Comayor" target="_blank" class="projectButton hoverable code"> &lt;/&gt;</a>
+                <a href="https://github.com/lenylopez19/elca-Comayor" target="_blank"
+                    class="projectButton hoverable code"> &lt;/&gt;</a>
             </section>
 
             <section class="projectSkillsContainer">
@@ -397,10 +492,12 @@
 
             <section class="projectDescription">
                 <p>
-                    Aplicación de escritorio desarrollada en C, una solución eficiente y versátil para la gestión de datos. 
-                    Con funciones intuitivas de inserción, edición, eliminación y consulta de información. Además, 
-                    proporciona valiosa información sobre el rendimiento mensual y resúmenes detallados semanales. 
-                    Diseñada con simplicidad y experiencia de usuario en mente. Asignación final de la materia Introducción a la Algoritmia.
+                    Aplicación de escritorio desarrollada en C, una solución eficiente y versátil para la gestión de
+                    datos.
+                    Con funciones intuitivas de inserción, edición, eliminación y consulta de información. Además,
+                    proporciona valiosa información sobre el rendimiento mensual y resúmenes detallados semanales.
+                    Diseñada con simplicidad y experiencia de usuario en mente. Asignación final de la materia
+                    Introducción a la Algoritmia.
                 </p>
             </section>
 
@@ -414,44 +511,45 @@
     <div class="wrapper">
         <article class="skills">
 
-                <section class="sectionTitleContainer">
-                    <img class="iconTitle" src="assets/icons/skill.png" alt="brain icon">
-                    <span class="sectionTittle">Habilidades</span>
-                </section>
-                
-                <section class="item">
-                    <img src="assets/icons/language.png" alt="language icon">
-                    <h3>Ingles - <a class="externalLink" href="assets/cv/english test.png" target="_blank">Avanzado</a> </h3>
-                </section>
-                <section class="item">
-                    <img src="assets/icons/c.png" alt="C logo">
-                    <h3>Lenguage C</h3>
-                </section>
-                <section class="item">
-                    <img src="assets/icons/html.png" alt="HTML logo">
-                    <h3>HTML 5</h3>
-                </section>
-                <section class="item">
-                    <img src="assets/icons/css.png" alt="CSS logo">
-                    <h3>CSS 3</h3>
-                </section>
-                <section class="item">
-                    <img src="assets/icons/javascript.png" alt="JavaScript logo">
-                    <h3>JavaScript</h3>
-                </section>
-                <section class="item">
-                    <img src="assets/icons/figma.png" alt="figma logo">
-                    <h3>UI UX design | figma</h3>
-                </section>
+            <section class="sectionTitleContainer">
+                <img class="iconTitle" src="assets/icons/skill.png" alt="brain icon">
+                <span class="sectionTittle">Habilidades</span>
+            </section>
+
+            <section class="item">
+                <img src="assets/icons/language.png" alt="language icon">
+                <h3>Ingles - <a class="externalLink" href="assets/cv/english test.png" target="_blank">Avanzado</a>
+                </h3>
+            </section>
+            <section class="item">
+                <img src="assets/icons/c.png" alt="C logo">
+                <h3>Lenguage C</h3>
+            </section>
+            <section class="item">
+                <img src="assets/icons/html.png" alt="HTML logo">
+                <h3>HTML 5</h3>
+            </section>
+            <section class="item">
+                <img src="assets/icons/css.png" alt="CSS logo">
+                <h3>CSS 3</h3>
+            </section>
+            <section class="item">
+                <img src="assets/icons/javascript.png" alt="JavaScript logo">
+                <h3>JavaScript</h3>
+            </section>
+            <section class="item">
+                <img src="assets/icons/figma.png" alt="figma logo">
+                <h3>UI UX design | figma</h3>
+            </section>
         </article>
-        
+
         <article class="learning">
-            
+
             <section class="sectionTitleContainer">
                 <img class="iconTitle" src="assets/icons/learning.png" alt="brain icon">
                 <span class="sectionTittle">Aprendiendo</span>
             </section>
-            
+
             <section class="item">
                 <img src="assets/icons/swift.png" alt="dart logo">
                 <h3>Swift</h3>
@@ -467,14 +565,14 @@
                 <h3>Base de datos</h3>
             </section>
         </article>
-        
+
         <article class="roadMap">
-                
+
             <section class="sectionTitleContainer">
                 <img class="iconTitle" src="assets/icons/roadmap.png" alt="brain icon">
                 <span class="sectionTittle">Roadmap</span>
             </section>
-            
+
             <section class="itemMaster">
                 <section class="subSectionTitleContainer">
                     <img src="assets/icons/mobile.png" alt="mobile icon">
@@ -496,9 +594,10 @@
                     <img src="assets/icons/kotlin.png" alt="kotlin logo">
                     <h3>Kotlin</h3>
                 </section>
-            </section> 
+            </section>
         </article>
     </div>
 
 </body>
+
 </html>
