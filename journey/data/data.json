@@ -1,6 +1,17 @@
 {
     "projects": [
         {
+            "id": 11,
+            "projectName": "Trabajo Final gestion de proyectos",
+            "projectIcon": "assets/icons/final.png",
+            "images": [
+                "assets/Final/img01.png",
+                "assets/Final/img1.png",
+                "assets/Final/img2.png",
+                "assets/Final/img3.png"
+            ]
+        },
+        {
             "id": 1,
             "projectName": "Ui designs",
             "projectIcon": "assets/icons/figma.png",
