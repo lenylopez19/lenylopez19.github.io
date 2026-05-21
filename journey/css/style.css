@@ -54,7 +54,7 @@ img{
     border: 1px solid rgba(113, 113, 113, 0.38);
     backdrop-filter: blur(20px); 
     -webkit-backdrop-filter: blur(20px);
-    border-radius: 15px;
+    border-radius: 34px;
 }
 
 /* START imageViewer */
@@ -161,7 +161,7 @@ img{
     border: 1px solid rgba(113, 113, 113, 0.38);
     backdrop-filter: blur(38px); 
     -webkit-backdrop-filter: blur(38px);
-    border-radius: 15px;
+    border-radius: 32px;
 }
 
 .infoWidget::after{
@@ -507,7 +507,7 @@ section.infoWidget.projectCard .screenshotsContainer .bothVertical{
         margin:0 auto;
     }
     .infoWidget{
-        padding: 30px 30px 37px;
+        padding: 60px;
     }
     .infoWidget::before{
         width: 407px;
